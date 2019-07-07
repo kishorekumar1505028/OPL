@@ -7,14 +7,15 @@ from .models import Product
 # Register your models here.
 
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('iduser', 'name', 'address', 'type')
+    list_display = ('iduser', 'name', 'address')
 
 
 class ShopAdmin(admin.ModelAdmin):
     list_display = ('idshop', 'name', 'owner_id', 'location')
 
+
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('idproduct', 'productname', 'price', 'image_url' , 'image')
+    list_display = ('idproduct', 'productname', 'price', 'image_url', 'image')
 
 
 admin.site.register(User, UserAdmin)

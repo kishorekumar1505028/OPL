@@ -170,10 +170,10 @@ class Product(models.Model):
     productname = models.CharField(db_column='ProductName', max_length=45)  # Field name made lowercase.
     price = models.FloatField(db_column='Price')  # Field name made lowercase.
     image_url = models.CharField(max_length=2046)
-    image = models.ImageField(blank=True, null=True,upload_to='images/')
+    image = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'product'
 
 
@@ -188,10 +188,24 @@ class Shop(models.Model):
         db_table = 'shop'
 
 
+class ShopOwner(models.Model):
+    idshopowner = models.AutoField(primary_key=True)
+    name = models.CharField(db_column='Name', max_length=45)  # Field name made lowercase.
+    address = models.CharField(db_column='Address', max_length=45)  # Field name made lowercase.
+    mobile_number = models.CharField(db_column='Mobile_number', unique=True, max_length=45, blank=True, null=True)  # Field name made lowercase.
+    email_id = models.CharField(db_column='Email_id', unique=True, max_length=45, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'shop_owner'
+
+
 class ShopStorage(models.Model):
     idshop_storage = models.AutoField(primary_key=True)
     shop = models.ForeignKey(Shop, models.DO_NOTHING)
     product = models.ForeignKey(Product, models.DO_NOTHING)
+    price = models.FloatField()
+    quantity = models.PositiveIntegerField()
 
     class Meta:
         managed = False
@@ -215,7 +229,10 @@ class User(models.Model):
     name = models.CharField(db_column='Name', max_length=45)  # Field name made lowercase.
     address = models.CharField(db_column='Address', max_length=45)  # Field name made lowercase.
     birthyear = models.DateField(db_column='Birthyear')  # Field name made lowercase.
-    type = models.CharField(db_column='Type', max_length=1)  # Field name made lowercase.
+    mobile_number = models.CharField(db_column='Mobile_number', unique=True, max_length=45, blank=True, null=True)  # Field name madeowercase.
+    email_id = models.CharField(db_column='Email_id', unique=True, max_length=45, blank=True, null=True)  # Field name made lowercase.
+    profession = models.CharField(db_column='Profession', max_length=45, blank=True, null=True)  # Field namemade lowercase.
+    bkash_account_no = models.CharField(db_column='bkash account_no', max_length=45, blank=True, null=True)  #Field renamed to remove unsuitable characters.
 
     class Meta:
         managed = False
