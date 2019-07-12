@@ -169,11 +169,12 @@ class Product(models.Model):
     idproduct = models.AutoField(primary_key=True)
     productname = models.CharField(db_column='ProductName', max_length=45)  # Field name made lowercase.
     price = models.FloatField(db_column='Price')  # Field name made lowercase.
-    image_url = models.CharField(max_length=2046)
-    image = models.CharField(max_length=100, blank=True, null=True)
+    category = models.CharField(max_length=2046 , default='others')
+    rating = models.IntegerField(max_length=1 , default='0')
+    image = models.ImageField(max_length=100, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'product'
 
 

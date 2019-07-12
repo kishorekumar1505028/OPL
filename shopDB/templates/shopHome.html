@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	<title>Shop Keeper Home</title>
+
+		<style>
+
+			.img_logo{
+			height:250px;
+			width:100%;
+			}
+
+			.link1{
+			position:absolute;
+			top:280px;
+			left:10%;
+			}
+
+			.link2{
+			position:absolute;
+			top:280px;
+			left:35%;
+			}
+
+			.link3{
+			position:absolute;
+			top:280px;
+			right:32%;
+			}
+
+			.link4{
+			position:absolute;
+			top:280px;
+			right:10%;
+			}
+
+			.infoBox{
+			height:80%;
+			width:45%;
+			position:absolute;
+			top:400px;
+			left:10%;
+			background-color:#F0FFFF;
+			}
+
+		</style>
+
+	</head>
+
+
+
+	<body bgcolor="#F5F5DC">
+		<img  class="img_logo" src="https://ak8.picdn.net/shutterstock/videos/26887408/thumb/1.jpg">  <br>
+
+		<a class="link1" href="{% url 'shopDB:shop_products' %}"><h2>All Products</h2></a>
+		<a class="link2" href="{% url 'shopDB:shop_products' %}"><h2>Edit Personal Info</h2></a>
+		<a class="link3" href="{% url 'shopDB:shop_products' %}"><h2>Sells Log</h2></a>
+		<a class="link4" href="{% url 'shopDB:login_shop' %}"><h2>LogOut</h2></a> 		<Br><Br><Br>
+
+		<div class="infoBox">
+			<Br>
+			<p><b><font size="6">User ID : </font></b>   <font size="6"></b>{{User.iduser}} </font></p> <Br>
+			<p><b><font size="6">User Name : </font></b>   <font size="6">{{User.name}} </font></p> <Br>
+			<p><b><font size="6">Shop ID : </font></b>   <font size="6">{{Shop.idshop}} </font></p> <Br>
+			<p><b><font size="6">Shop Name : </font></b>   <font size="6">{{Shop.name}} </font></p> <Br>
+			<!--
+			<p><b><font size="6">Shop Catagory : </font></b></p> <p><font size="6">{{Shop.name}} </font></p> <Br>
+			-->
+			<p><b><font size="6">Address : </font></b></p>   <p><font size="6"> {{Shop.location}} </font></p> <Br>
+
+
+		</div>
+
+	</body>
+
+</html>

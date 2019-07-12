@@ -1,0 +1,31 @@
+<html>
+{%load staticfiles %}
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+</style>
+</head>
+
+<body>
+
+<div class="product-detail">
+<div class="product">
+  <h1 align="center" > {{product.productname}} </h1>
+
+
+<a target="_blank" href={{product.productname}}>
+  {% if product.image %}
+    <img src={{product.image.url}} alt={{product.productname}} width="500" height="600" >
+  {% endif %}
+</a>
+
+<p>  <span>&#2547;</span> {{product.price}}</p>
+
+
+</div>
+</div>
+
+</body>
+</html>

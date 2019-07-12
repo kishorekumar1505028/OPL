@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+img {
+  border: 1px solid #ddd; /* Gray border */
+  border-radius: 4px;  /* Rounded border */
+  padding: 5px; /* Some padding */
+  width: 150px; /* Set a small width */
+}
+
+/* Add a hover effect (blue shadow) */
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.product{
+    position:absolute;
+    left:10%;
+}
+
+</style>
+</head>
+
+<body>
+<p align="center"><b><font size="10" style="color:#000066" >Available Products</font></b></p>
+<div class="products_list" align="center">
+{% for product in products_list %}
+<div class="product" align="center">
+<h2> <a href="{% url 'shopDB:details' slug=product.productname %}">{{product.productname}}</a></h2>
+
+<p>  <span>&#2547;</span> {{product.price}}</p> <p>{{product.rating}}</p>
+</div> <br>
+
+{% endfor %}
+</div>
+
+
+</body>
+</html>

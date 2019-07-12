@@ -15,7 +15,7 @@ class ShopAdmin(admin.ModelAdmin):
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('idproduct', 'productname', 'price', 'image_url', 'image')
+    list_display = ('idproduct', 'productname', 'price', 'image' , 'rating')
 
 
 admin.site.register(User, UserAdmin)
