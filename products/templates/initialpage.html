@@ -172,7 +172,7 @@
                     <div id="product-slick-1" class="product-slick">
                         <!-- Product Single -->
                         {% for product in products_list %}
-                        {% if forloop.counter <= 5 %}
+                        {% if forloop.counter <= 9 %}
 
                         <div class="product product-single">
                             <div class="product-thumb">
@@ -194,12 +194,12 @@
                                 </h3>
 
                                 <div class="product-rating">
+                                    {% for i in  %}
 										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star"></i>
-										<i class="fa fa-star-o empty"></i>
-                                </div>
+                                    {% endfor %}
+                                    <i class="fa fa-star-o empty"></i>
+
+				                </div>
 
 
                                 <h2 class="product-name"><a href="#">{{ product.productname}}</a></h2>
