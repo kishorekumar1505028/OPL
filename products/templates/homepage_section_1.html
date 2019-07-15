@@ -1,0 +1,90 @@
+{% load homepage_extras %}
+
+
+{% block homepage_section_1 %}
+
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- section-title -->
+
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h2 class="title">Deals of the day</h2>
+                    <div class="pull-right">
+                        <div class="product-slick-dots-1 custom-dots"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- /section-title -->
+
+            <!-- Product Slick -->
+
+            <div class="col-md-9 col-sm-6 col-xs-6">
+
+                <div class="row">
+
+
+                    <div id="product-slick-1" class="product-slick">
+                        <!-- Product Single -->
+                        {% for product in products_list %}
+                        {% if forloop.counter <= 9 %}
+
+                        <div class="product product-single">
+                            <div class="product-thumb">
+                                <div class="product-label">
+                                    <span>New</span>
+                                    <span class="sale">-20%</span>
+                                </div>
+
+                                {% if product.image %}
+                                    <img src="{{ product.image.url}}" alt="">
+                                {% endif %}
+
+
+                            </div>
+                            <div class="product-body">
+                                <h3 class="product-price">${{ product.price}}
+                                    <del class="product-old-price">$45.00</del>
+                                </h3>
+
+                                <div class="product-rating">
+
+                                    {% for i in product.rating|getrange:0 %}
+										<i class="fa fa-star"></i>
+                                    {% endfor %}
+
+                                    {% for i in product.rating|getrange:5 %}
+										 <i class="fa fa-star-o empty"></i>
+                                    {% endfor %}
+
+
+				                </div>
+
+
+                                <h2 class="product-name"> <a href = "{% url 'product_details' %}" >{{ product.productname}}</a></h2>
+                                <h2 class="shop-name"><a href="shop_welcome_page.html">Shop Name</a></h2>
+                                <div class="product-btns">
+                                    <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                                    <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
+                                    <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to
+                                        Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        <!-- /Product Single -->
+                    </div>
+                </div>
+            </div>
+            <!-- /Product Slick -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- container -->
+</div>
+{% endblock %}

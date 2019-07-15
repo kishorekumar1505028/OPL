@@ -2,8 +2,10 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Product
 from .models import User
+from .models import Shop
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
+from django.urls import reverse
 
 
 # Create your views here.
@@ -13,9 +15,16 @@ def index(request):
     products = Product.objects.all()
     return render(request, 'index.html', {'products_list': products})
 
+def product_details(request):
+    products = Product.objects.all()
+    shops = Shop.objects.all()
+    return render(request, 'product_details.html' , {'products_list': products, 'shops_list': shops})
+
+
 def initial_page(request):
     products = Product.objects.all()
-    return render(request, 'initialpage.html', {'products_list': products})
+    shops = Shop.objects.all()
+    return render(request, 'initialpage.html', {'products_list': products, 'shops_list': shops})
 
 
 def login_view(request):
@@ -31,7 +40,7 @@ def login_view(request):
 
         for u in users:
             if user == u.name and passwd == '12345':
-                products = Product.objects.all() ;
+                products = Product.objects.all();
                 return render(request, 'initialpage.html', {'products_list': products})
 
         return render(request, 'error.html')

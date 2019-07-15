@@ -5,16 +5,16 @@ class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=150)
 
     class Meta:
-        
+        managed = False
         db_table = 'auth_group'
 
 
 class AuthGroupPermissions(models.Model):
-    group = models.OneToOneField(AuthGroup, models.DO_NOTHING)
+    group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
     permission = models.ForeignKey('AuthPermission', models.DO_NOTHING)
 
     class Meta:
-        
+        managed = False
         db_table = 'auth_group_permissions'
         unique_together = (('group', 'permission'),)
 
@@ -25,7 +25,7 @@ class AuthPermission(models.Model):
     codename = models.CharField(max_length=100)
 
     class Meta:
-        
+        managed = False
         db_table = 'auth_permission'
         unique_together = (('content_type', 'codename'),)
 
@@ -43,7 +43,7 @@ class AuthUser(models.Model):
     date_joined = models.DateTimeField()
 
     class Meta:
-        
+        managed = False
         db_table = 'auth_user'
 
 
@@ -52,7 +52,7 @@ class AuthUserGroups(models.Model):
     group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
 
     class Meta:
-        
+        managed = False
         db_table = 'auth_user_groups'
         unique_together = (('user', 'group'),)
 
@@ -62,7 +62,7 @@ class AuthUserUserPermissions(models.Model):
     permission = models.ForeignKey(AuthPermission, models.DO_NOTHING)
 
     class Meta:
-        
+        managed = False
         db_table = 'auth_user_user_permissions'
         unique_together = (('user', 'permission'),)
 
@@ -72,7 +72,7 @@ class Cart(models.Model):
     user = models.ForeignKey('User', models.DO_NOTHING)
 
     class Meta:
-        
+        managed = False
         db_table = 'cart'
 
 
@@ -84,7 +84,7 @@ class CartDetails(models.Model):
     quantity = models.PositiveIntegerField()
 
     class Meta:
-        
+        managed = False
         db_table = 'cart_details'
 
 
@@ -94,7 +94,7 @@ class Discount(models.Model):
     quantity = models.PositiveIntegerField()
 
     class Meta:
-        
+        managed = False
         db_table = 'discount'
 
 
@@ -106,7 +106,7 @@ class DiscountDetails(models.Model):
     shop = models.ForeignKey('Shop', models.DO_NOTHING)
 
     class Meta:
-        
+        managed = False
         db_table = 'discount_details'
 
 
@@ -120,7 +120,7 @@ class DjangoAdminLog(models.Model):
     user = models.ForeignKey(AuthUser, models.DO_NOTHING)
 
     class Meta:
-        
+        managed = False
         db_table = 'django_admin_log'
 
 
@@ -129,7 +129,7 @@ class DjangoContentType(models.Model):
     model = models.CharField(max_length=100)
 
     class Meta:
-        
+        managed = False
         db_table = 'django_content_type'
         unique_together = (('app_label', 'model'),)
 
@@ -140,7 +140,7 @@ class DjangoMigrations(models.Model):
     applied = models.DateTimeField()
 
     class Meta:
-        
+        managed = False
         db_table = 'django_migrations'
 
 
@@ -150,7 +150,7 @@ class DjangoSession(models.Model):
     expire_date = models.DateTimeField()
 
     class Meta:
-        
+        managed = False
         db_table = 'django_session'
 
 
@@ -161,6 +161,7 @@ class Payment(models.Model):
     courier_boy = models.ForeignKey('User', models.DO_NOTHING)
 
     class Meta:
+        managed = False
         db_table = 'payment'
 
 
@@ -184,7 +185,7 @@ class Shop(models.Model):
     name = models.CharField(max_length=45)
 
     class Meta:
-        
+        managed = False
         db_table = 'shop'
 
 
@@ -196,7 +197,7 @@ class ShopOwner(models.Model):
     email_id = models.CharField(db_column='Email_id', unique=True, max_length=45, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        
+        managed = False
         db_table = 'shop_owner'
 
 
@@ -208,7 +209,7 @@ class ShopStorage(models.Model):
     quantity = models.PositiveIntegerField()
 
     class Meta:
-        
+        managed = False
         db_table = 'shop_storage'
 
 
@@ -220,7 +221,7 @@ class Shoplog(models.Model):
     user = models.ForeignKey('User', models.DO_NOTHING)
 
     class Meta:
-        
+        managed = False
         db_table = 'shoplog'
 
 
@@ -235,5 +236,5 @@ class User(models.Model):
     bkash_account_no = models.CharField(db_column='bkash account_no', max_length=45, blank=True, null=True)  #Field renamed to remove unsuitable characters.
 
     class Meta:
-        
+        managed = False
         db_table = 'user'
