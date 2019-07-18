@@ -171,7 +171,7 @@ class Product(models.Model):
     price = models.FloatField(db_column='Price')  # Field name made lowercase.
     category = models.CharField(max_length=2046 , default='others')
     rating = models.IntegerField(max_length=1 , default='0')
-    image = models.ImageField(max_length=100, blank=True, null=True)
+    image = models.ImageField(max_length=100, blank=True, null=True, upload_to = 'img')
 
     class Meta:
         managed = True

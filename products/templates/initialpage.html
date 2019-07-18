@@ -1,36 +1,53 @@
+{% load static %}
+{% load homepage_extras %}
+
 <!DOCTYPE html>
-
 <html lang="en">
-    {% include 'baseheader.html' %}
+{% include 'baseheader.html' %}
 
-    {% block homepage %}
-    <body>
-    <!-- HEADER -->
-    {% include 'initial_page_header.html' %}
+{% block homepage %}
+<body>
+<!-- HEADER -->
+{% include 'initial_page_header.html' %}
 
-    <!-- NAVIGATION -->
-    {% include 'initial_page_navigation.html' %}
-    <!-- /NAVIGATION -->
+<!-- NAVIGATION -->
+{% include 'initial_page_navigation.html' %}
+<!-- /NAVIGATION -->
 
-    <!-- section -->
-    {% include 'homepage_section_1.html' %}
-    <!-- section -->
+<!-- section -->
+{% include 'homepage_section_1.html' %}
+<!-- section -->
 
-    <!-- section -->
-    {% include 'homepage_section_2.html' %}
-    <!-- section -->
+<!-- section -->
+{% include 'homepage_section_2.html' %}
 
-    <!-- section -->
-    {% include 'homepage_section_3.html' %}
-    <!-- section -->
+<!-- section -->
+{% include 'homepage_section_3.html' %}
+<!-- section -->
 
-    <!--footer -->
-    {% include 'homepage_footer.html' %}
-    <!-- footer -->
+<!--footer -->
+{% include 'homepage_footer.html' %}
+<!-- footer -->
+<script src="media/js/jquery.min.js"></script>
+<script src="media/js/bootstrap.min.js"></script>
+<script src="media/js/slick.min.js"></script>
+<script src="media/js/nouislider.min.js"></script>
+<script src="media/js/jquery.zoom.min.js"></script>
+<script src="media/js/main.js"></script>
 
-    {% include 'basejs.html' %}
 
-    </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+</body>
 {% endblock %}
 </html>
 

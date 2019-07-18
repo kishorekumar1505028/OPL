@@ -6,8 +6,11 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', views.initial_page, name='initial_page'),
     path('product_details/', views.product_details, name='product_details'),
+    path('user_login/', views.user_login, name='user_login')
 ]
 
 if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)

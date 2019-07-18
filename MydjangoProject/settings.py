@@ -11,11 +11,11 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -26,7 +26,7 @@ SECRET_KEY = '&o&jd9dy41bxn^j21!it3(afe1#7(xpxc(192&kjncrtov_(ov'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['d3599605.ngrok.io', '127.0.0.1']
 
 # Application definition
 
@@ -50,6 +50,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+]
+STATICFILES_FINDERS = [
+
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
 
 ROOT_URLCONF = 'MydjangoProject.urls'
@@ -57,7 +63,7 @@ ROOT_URLCONF = 'MydjangoProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -91,7 +97,8 @@ DATABASES = {
         'PASSWORD': 'newrootpassword',
         # connect options
         'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES' ; SET default_storage_engine=INNODB",  # \n SET innodb_strict_mode = 1",
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES' ; SET default_storage_engine=INNODB",
+            # \n SET innodb_strict_mode = 1",
             'charset': 'utf8mb4',
         },
 
@@ -138,3 +145,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIR = [
+    os.path.join(BASE_DIR, 'static'),
+    'F:/1505028/MyDjangoProject/static/login/',
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

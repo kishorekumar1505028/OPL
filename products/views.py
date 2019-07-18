@@ -15,6 +15,9 @@ def index(request):
     products = Product.objects.all()
     return render(request, 'index.html', {'products_list': products})
 
+def user_login(request):
+    return render(request, 'user_login.html')
+
 def product_details(request):
     products = Product.objects.all()
     shops = Shop.objects.all()
