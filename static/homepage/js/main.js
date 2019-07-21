@@ -143,5 +143,26 @@
       }
     });
   }
+  
+  var location_slider = document.getElementById('location-slider');
+  if (location_slider) {
+    noUiSlider.create(location_slider, {
+      start: [0, 10],
+      connect: true,
+      tooltips: [true, true],
+      format: {
+        to: function(value) {
+          return value.toFixed(2) + 'km';
+        },
+        from: function(value) {
+          return value
+        }
+      },
+      range: {
+        'min': 0,
+        'max': 10
+      }
+    });
+  }
 
 })(jQuery);

@@ -11,15 +11,11 @@
             <div class="menu-nav">
                 <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
                 <ul class="menu-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Electronics</a></li>
-                    <li><a href="#">Smartphones</a></li>
-                    <li><a href="#">Watches</a></li>
-                    <li><a href="#">Clothings</a></li>
-                    <li><a href="#">Bags</a></li>
-                    <li><a href="#">Shoes</a></li>
-                    <li><a href="#">Jwelry</a></li>
-                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Home</a></li>
+                    {% for i in products_list|getcategory:"All Categories" %}
+                        <li><a href="#">{{i}}</a></li>
+
+                    {% endfor %}
                 </ul>
             </div>
             <!-- menu nav -->

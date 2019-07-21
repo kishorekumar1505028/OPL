@@ -9,43 +9,29 @@ from django.urls import reverse
 
 
 # Create your views here.
+products = Product.objects.all()
+shops = Shop.objects.all()
 
 
 def index(request):
-    products = Product.objects.all()
     return render(request, 'index.html', {'products_list': products})
+
 
 def user_login(request):
     return render(request, 'userlogin.html')
 
-def product_details(request):
-    products = Product.objects.all()
-    shops = Shop.objects.all()
-    return render(request, 'product_details.html' , {'products_list': products, 'shops_list': shops})
+def advanced_search(request):
+    return render(request, 'advanced_search.html',{'products_list': products, 'shops_list': shops})
 
 
+def product_details(request, product_id):
+
+    for product in products:
+        if product.idproduct == product_id:
+            return render(request, 'product_details.html', {'product_details': product,
+                                                            'products_list': products,
+                                                            'shops_list': shops})
 def initial_page(request):
-    products = Product.objects.all()
-    shops = Shop.objects.all()
     return render(request, 'homepage.html', {'products_list': products, 'shops_list': shops})
 
 
-def login_view(request):
-    # print('hello')
-    # print (request.POST.get('username'))
-    # return HttpResponse("Hello, world. You're at the login.")
-    flag = 0
-    users = User.objects.all()
-    if request.method == 'POST':
-        print(request.POST.get('username'))
-        user = request.POST.get('username')
-        passwd = request.POST.get('psw')
-
-        for u in users:
-            if user == u.name and passwd == '12345':
-                products = Product.objects.all();
-                return render(request, 'homepage.html', {'products_list': products})
-
-        return render(request, 'error.html')
-    else:
-        return render(request, 'login.html')
