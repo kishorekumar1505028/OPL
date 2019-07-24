@@ -2,6 +2,7 @@ from django import template
 
 register = template.Library()
 
+foo = 0
 
 @register.filter(name='getrange')
 def getrange(value, arg):
@@ -10,6 +11,18 @@ def getrange(value, arg):
     else:
         return range(arg - value)
 
+@register.filter(name='getval')
+def getval (value):
+    return value\
+
+@register.filter(name='getfoo')
+def getfoo (val):
+    return foo
+@register.filter(name='setfoo')
+def setfoo (val):
+    foo = 2
+    print("foo : ")
+    print(foo)
 
 @register.filter(name='getcategory')
 def getcategory(item_list , arg):

@@ -89,6 +89,12 @@
 	<script src="/{% static 'login/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
 <!--===============================================================================================-->
 	<script src="/{% static 'login/vendor/select2/select2.min.js' %}"></script>
+    <script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
 <!--===============================================================================================-->
 	<script src="/{% static 'login/vendor/daterangepicker/moment.min.js' %}"></script>
 	<script src="/{% static 'login/vendor/daterangepicker/daterangepicker.js' %}"></script>

@@ -1,6 +1,7 @@
 {% load static %}
+{% load homepage_extras %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 {% include 'homepage_css.html' %}
 
@@ -99,27 +100,65 @@
                 <div class="store-filter clearfix">
                     <div class="pull-left">
                         <div class="row-filter">
-                            <a href="#"><i class="fa fa-th-large"></i></a>
+                            <a href="#"> hi <i class="fa fa-th-large"></i></a>
                             <a href="#" class="active"><i class="fa fa-bars"></i></a>
                         </div>
                         <div class="sort-filter">
                             <span class="text-uppercase">Sort By:</span>
-                            <select class="input">
-                                <option value="0">Position</option>
-                                <option value="1">Price</option>
-                                <option value="2">Rating</option>
+                            <select class="input" id="id_sort" name="id_sort">
+                                <option value=0>Position</option>
+                                <option value=1>Price</option>
+                                <option value=2>Rating</option>
                             </select>
-                            <a href="#" class="main-btn icon-btn"><i class="fa fa-arrow-down"></i></a>
+                            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+                            <script type="text/javascript">
+
+                                jQuery('#id_sort').on('change', function () {
+
+                                    if (jQuery(this).val() == 0) {
+                                        window.location.href = '{% url 'advanced_search' 5 0 %}' ;
+                                    }
+                                    if (jQuery(this).val() == 1) {
+                                        window.location.href = '{% url 'advanced_search' 5 1 %}' ;
+                                    }
+                                    if (jQuery(this).val() == 2) {
+                                        window.location.href = '{% url 'advanced_search' 5 2 %}' ;
+                                    }
+                                    // and so on
+                                })
+                            </script>
+                            <button id="submit"><a href="{% url 'advanced_search' products_one_page 0 %}">
+                                Submit {{ products_one_page }}</a></button>
                         </div>
                     </div>
                     <div class="pull-right">
                         <div class="page-filter">
                             <span class="text-uppercase">Show:</span>
-                            <select class="input">
-                                <option value="0">10</option>
-                                <option value="1">20</option>
-                                <option value="2">30</option>
+
+                            <select class="input" id="cd-dropdown" name="cd-dropdown">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
                             </select>
+                            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                            <script type="text/javascript">
+
+                                jQuery('#cd-dropdown').on('change', function () {
+
+                                    if (jQuery(this).val() == 10) {
+                                        window.location.href = '{% url 'advanced_search' 10 5 %}' ;
+                                    }
+                                    if (jQuery(this).val() == 20) {
+                                        window.location.href = '{% url 'advanced_search' 20 5 %}' ;
+                                    }
+                                    if (jQuery(this).val() == 30) {
+                                        window.location.href = '{% url 'advanced_search' 30 5 %}' ;
+                                    }
+                                    // and so on
+                                })
+                            </script>
+
                         </div>
                         <ul class="store-pages">
                             <li><span class="text-uppercase">Page:</span></li>
@@ -138,89 +177,87 @@
                     <div class="row">
                         <!-- Product Single -->
                         {% for product in products_list %}
-                            {% if forloop.counter <= 6 %}
-
-                            <div class="col-md-4 col-sm-6 col-xs-6">
-                                <div class="product product-single">
-                                    <div class="product-thumb">
-                                        <button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view
-                                        </button>
-                                        {% if product.image %}
-
-                                            <img src="{{ product.image.url }}" alt="">
-                                        {% endif %}
-                                    </div>
-                                    <div class="product-body">
-                                        <h3 class="product-price">{{ product.price }}</h3>
-                                        <div class="product-rating">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o empty"></i>
+                            {% if forloop.counter <= products_one_page|getval %}
+                                <div class="col-md-4 col-sm-6 col-xs-6">
+                                    <div class="product product-single">
+                                        <div class="product-thumb">
+                                            {% if product.image %}
+                                                <img src="{{ product.image.url }}" alt="">
+                                            {% endif %}
                                         </div>
-                                        <h2 class="product-name"><a href="#">{{ product.productname }}</a></h2>
-                                        <div class="product-btns">
-                                            <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                            <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-                                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i>
-                                                Add to
-                                                Cart
-                                            </button>
+                                        <div class="product-body">
+                                            <h3 class="product-price">{{ product.price }}</h3>
+                                            <div class="product-rating">
+                                                {% for i in product.rating|getrange:0 %}
+                                                    <i class="fa fa-star"></i>
+                                                {% endfor %}
+
+                                                {% for i in product.rating|getrange:5 %}
+                                                    <i class="fa fa-star-o empty"></i>
+                                                {% endfor %}
+
+                                            </div>
+                                            <h2 class="product-name"><a href="#">{{ product.productname }}</a></h2>
+                                            <div class="product-btns">
+                                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                                                <button class="main-btn icon-btn"><i class="fa fa-exchange"></i>
+                                                </button>
+                                                <button class="primary-btn add-to-cart"><i
+                                                        class="fa fa-shopping-cart"></i>
+                                                    Add to
+                                                    Cart
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- /Product Single -->
-                            {%  endif %}
+                                <!-- /Product Single -->
+                            {% endif %}
                         {% endfor %}
                     </div>
                     <!-- /row -->
                 </div>
                 <!-- /STORE -->
-
-                <!-- store bottom filter -->
-                <div class="store-filter clearfix">
-                    <div class="pull-left">
-                        <div class="row-filter">
-                            <a href="#"><i class="fa fa-th-large"></i></a>
-                            <a href="#" class="active"><i class="fa fa-bars"></i></a>
-                        </div>
-                        <div class="sort-filter">
-                            <span class="text-uppercase">Sort By:</span>
-                            <select class="input">
-                                <option value="0">Position</option>
-                                <option value="0">Price</option>
-                                <option value="0">Rating</option>
-                            </select>
-                            <a href="#" class="main-btn icon-btn"><i class="fa fa-arrow-down"></i></a>
-                        </div>
-                    </div>
-                    <div class="pull-right">
-                        <div class="page-filter">
-                            <span class="text-uppercase">Show:</span>
-                            <select class="input">
-                                <option value="0">10</option>
-                                <option value="1">20</option>
-                                <option value="2">30</option>
-                            </select>
-                        </div>
-                        <ul class="store-pages">
-                            <li><span class="text-uppercase">Page:</span></li>
-                            <li class="active">1</li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i></a></li>
-                        </ul>
-                    </div>
+                <div class="row-filter">
+                    <a href="#"><i class="fa fa-th-large"></i></a>
+                    <a href="#" class="active"><i class="fa fa-bars"></i></a>
                 </div>
-                <!-- /store bottom filter -->
+                <div class="sort-filter">
+                    <span class="text-uppercase">Sort By:</span>
+                    <select class="input">
+                        <option value="0">Position</option>
+                        <option value="0">Price</option>
+                        <option value="0">Rating</option>
+                    </select>
+                    <a href="#" class="main-btn icon-btn"><i class="fa fa-arrow-down"></i></a>
+                </div>
             </div>
-            <!-- /MAIN -->
+
+            <div class="pull-right">
+                <div class="page-filter">
+                    <span class="text-uppercase">Show:</span>
+                    <select class="input">
+                        <option value="0">10</option>
+                        <option value="1">20</option>
+                        <option value="2">30</option>
+                    </select>
+                </div>
+                <ul class="store-pages">
+                    <li><span class="text-uppercase">Page:</span></li>
+                    <li class="active">1</li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#"><i class="fa fa-caret-right"></i></a></li>
+                </ul>
+            </div>
         </div>
-        <!-- /row -->
+        <!-- /store bottom filter -->
     </div>
-    <!-- /container -->
+    <!-- /MAIN -->
+</div>
+<!-- /row -->
+</div>
+<!-- /container -->
 </div>
 <!-- /section -->
 

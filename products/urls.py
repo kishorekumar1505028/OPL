@@ -7,6 +7,6 @@ urlpatterns = [
     path('', views.initial_page, name='initial_page'),
     path('product_details/<int:product_id>/', views.product_details, name='product_details'),
     path('user_login/', views.user_login, name='user_login'),
-    path('advanced_search/', views.advanced_search, name='advanced_search'),
+    path('advanced_search/<int:n_products>/<int:sort_criteria>/', views.advanced_search, name='advanced_search'),
 ]
 
