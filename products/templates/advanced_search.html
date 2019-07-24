@@ -98,68 +98,37 @@
             <div id="main" class="col-md-9">
                 <!-- store top filter -->
                 <div class="store-filter clearfix">
+                    <form class="" action="{% url 'advanced_search' %}" method="get">
+
                     <div class="pull-left">
                         <div class="row-filter">
                             <a href="#"> hi <i class="fa fa-th-large"></i></a>
                             <a href="#" class="active"><i class="fa fa-bars"></i></a>
                         </div>
-                        <div class="sort-filter">
-                            <span class="text-uppercase">Sort By:</span>
-                            <select class="input" id="id_sort" name="id_sort">
-                                <option value=0>Position</option>
-                                <option value=1>Price</option>
-                                <option value=2>Rating</option>
-                            </select>
-                            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-                            <script type="text/javascript">
+                            <div class="sort-filter">
+                                <span class="text-uppercase">Sort By:</span>
+                                <select class="input" id="id_sort" name="id_sort">
+                                    <option value=0>Position</option>
+                                    <option value=1>Price</option>
+                                    <option value=2>Rating</option>
+                                </select>
 
-                                jQuery('#id_sort').on('change', function () {
+                            </div>
 
-                                    if (jQuery(this).val() == 0) {
-                                        window.location.href = '{% url 'advanced_search' 5 0 %}' ;
-                                    }
-                                    if (jQuery(this).val() == 1) {
-                                        window.location.href = '{% url 'advanced_search' 5 1 %}' ;
-                                    }
-                                    if (jQuery(this).val() == 2) {
-                                        window.location.href = '{% url 'advanced_search' 5 2 %}' ;
-                                    }
-                                    // and so on
-                                })
-                            </script>
-                            <button id="submit"><a href="{% url 'advanced_search' products_one_page 0 %}">
-                                Submit {{ products_one_page }}</a></button>
-                        </div>
                     </div>
                     <div class="pull-right">
                         <div class="page-filter">
                             <span class="text-uppercase">Show:</span>
 
-                            <select class="input" id="cd-dropdown" name="cd-dropdown">
+                            <select class="input" id="n_products" name="n_products">
                                 <option value="10">10</option>
                                 <option value="20">20</option>
                                 <option value="30">30</option>
                             </select>
-                            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-                            <script type="text/javascript">
-
-                                jQuery('#cd-dropdown').on('change', function () {
-
-                                    if (jQuery(this).val() == 10) {
-                                        window.location.href = '{% url 'advanced_search' 10 5 %}' ;
-                                    }
-                                    if (jQuery(this).val() == 20) {
-                                        window.location.href = '{% url 'advanced_search' 20 5 %}' ;
-                                    }
-                                    if (jQuery(this).val() == 30) {
-                                        window.location.href = '{% url 'advanced_search' 30 5 %}' ;
-                                    }
-                                    // and so on
-                                })
-                            </script>
 
                         </div>
+                        <button id="submit">Submit {{ products_one_page }}</button>
                         <ul class="store-pages">
                             <li><span class="text-uppercase">Page:</span></li>
                             <li class="active">1</li>
@@ -168,6 +137,8 @@
                             <li><a href="#"><i class="fa fa-caret-right"></i></a></li>
                         </ul>
                     </div>
+                    </form>
+
                 </div>
                 <!-- /store top filter -->
 
@@ -177,7 +148,8 @@
                     <div class="row">
                         <!-- Product Single -->
                         {% for product in products_list %}
-                            {% if forloop.counter <= products_one_page|getval %}
+
+                            {% if forloop.counter <= products_one_page|getval  %}
                                 <div class="col-md-4 col-sm-6 col-xs-6">
                                     <div class="product product-single">
                                         <div class="product-thumb">

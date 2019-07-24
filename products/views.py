@@ -9,7 +9,6 @@ from django.urls import reverse
 
 # Create your views here.
 products = Product.objects.all()
-aproducts = Product.objects.all()
 shops = Shop.objects.all()
 n_of_products_one_page = 10
 sort_by_products = 0
@@ -23,23 +22,26 @@ def user_login(request):
     return render(request, 'userlogin.html')
 
 
-def advanced_search(request, n_products, sort_criteria):
-    trimmed_products = aproducts
-    if sort_criteria == 2:
+def advanced_search(request):
+    sort_by = 0
+    n_products = 10
+    if request.method == 'GET':
+        if request.GET.get('id_sort') is not None:
+            sort_by = int(request.GET.get('id_sort'))
+        if request.GET.get('n_products') is not None:
+            n_products =int (request.GET.get('n_products'))
+        print("sort by :")
+        print(sort_by)
+        print(n_products)
+    trimmed_products = products
+    if sort_by == 2:
+        print("dhukse sort er vitor")
         trimmed_products = trimmed_products.order_by('rating')
-    elif sort_criteria == 1:
+    elif sort_by == 1:
         trimmed_products = trimmed_products.order_by('price')
-    if n_products != 5:
-        n_of_products_one_page = n_products
-    else :
-        n_of_products_one_page = 10
-
-    aproducts = trimmed_products
-
 
     return render(request, 'advanced_search.html',
-              {'products_list': trimmed_products, 'shops_list': shops, 'products_one_page': n_of_products_one_page,
-               'sort_by': sort_by_products, })
+                  {'products_list': trimmed_products, 'shops_list': shops, 'products_one_page': n_products, })
 
 
 def product_details(request, product_id):

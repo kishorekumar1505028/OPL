@@ -13,11 +13,11 @@ def getrange(value, arg):
 
 @register.filter(name='getval')
 def getval (value):
-    return value\
+    return int (value)
 
 @register.filter(name='getfoo')
 def getfoo (val):
-    return foo
+    return val
 @register.filter(name='setfoo')
 def setfoo (val):
     foo = 2
