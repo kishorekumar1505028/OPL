@@ -1,0 +1,52 @@
+{% load static %}
+{% load homepage_extras %}
+
+<!-- STORE -->
+<div id="store">
+    <!-- row -->
+    <div class="row">
+        <!-- Product Single -->
+        {% for product in products_list %}
+            print("printing")
+            print (products_one_page)
+            {% if forloop.counter <= products_one_page|getval %}
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div class="product product-single">
+                        <div class="product-thumb">
+                            {% if product.image %}
+                                <img src="{{ product.image.url }}" alt="">
+                            {% endif %}
+                        </div>
+                        <div class="product-body">
+                            <h3 class="product-price">{{ product.price }}</h3>
+                            <div class="product-rating">
+                                {% for i in product.rating|getrange:0 %}
+                                    <i class="fa fa-star"></i>
+                                {% endfor %}
+
+                                {% for i in product.rating|getrange:5 %}
+                                    <i class="fa fa-star-o empty"></i>
+                                {% endfor %}
+
+                            </div>
+                            <h2 class="product-name"><a href="#">{{ product.productname }}</a></h2>
+                            <div class="product-btns">
+                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                                <button class="main-btn icon-btn"><i class="fa fa-exchange"></i>
+                                </button>
+                                <button class="primary-btn add-to-cart"><i
+                                        class="fa fa-shopping-cart"></i>
+                                    Add to
+                                    Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Product Single -->
+            {% endif %}
+        {% endfor %}
+    </div>
+    <!-- /row -->
+</div>
+<!-- /STORE -->
