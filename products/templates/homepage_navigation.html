@@ -2,25 +2,54 @@
 
 
 {% block homepage_navigation %}
-<div id="navigation">
-    <!-- container -->
-    <div class="container">
-        <div id="responsive-nav">
+    <div id="navigation">
+        <!-- container -->
+        <div class="container">
+            <!-- category nav -->
+            <div class="category-nav">
+                <span class="category-header">Categories <i class="fa fa-list"></i></span>
+                <ul class="category-list">
 
-            <!-- menu nav -->
-            <div class="menu-nav">
-                <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
-                <ul class="menu-list">
-                    <li><a href={% url 'initial_page' %}>Home</a></li>
-                    {% for i in products_list|getcategory:"All Categories" %}
-                        <li><a href="#">{{i}}</a></li>
+                    <li class="dropdown side-dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Women <i
+                                class="fa fa-angle-right"></i></a>
+                        <div class="custom-menu">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <ul class="list-links">
+                                        <li>
+                                            <h3 class="list-links-title">Clothing</h3></li>
+                                        <li><a href="#">Saree</a></li>
+                                        <li><a href="#">Salwar</a></li>
+                                    </ul>
+                                    <hr class="hidden-md hidden-lg">
+                                </div>
 
-                    {% endfor %}
+                            </div>
+                        </div>
+                    </li>
+
+
                 </ul>
             </div>
-            <!-- menu nav -->
+            <!-- /category nav -->
+
+            <div id="responsive-nav">
+
+                <!-- menu nav -->
+                <div class="menu-nav">
+                    <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
+                    <ul class="menu-list">
+                        <li><a href={% url 'initial_page' %}>Home</a></li>
+                        {% for i in products_list|getcategory:"All Categories" %}
+                            <li><a href="#">{{ i }}</a></li>
+
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- menu nav -->
+            </div>
         </div>
+        <!-- /container -->
     </div>
-    <!-- /container -->
-</div>
 {% endblock %}

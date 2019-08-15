@@ -1,10 +1,12 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from django.shortcuts import render
 from .models import Product
-from .models import User
 from .models import Shop
 from django.db.models import Q
-
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.contrib import messages
+from django.contrib.auth import login, logout, authenticate
 from .models import ShopProduct
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
@@ -20,28 +22,6 @@ sort_by_products = 0
 def index(request):
     return render(request, 'index.html', {'products_list': products})
 
-
-def user_login(request):
-    msg = ""
-    if request.method == 'POST':
-        name = request.POST.get('username')
-        password = request.POST.get('password')
-        try:
-            user = User.objects.get(Q(name=name) | Q(password=password))
-        except User.DoesNotExist:
-            user = None
-
-        if user is not None:
-            # user already exists
-            msg = "login successful"
-            return render(request, 'userlogin.html',{'msg' : msg ,} )
-
-        else:
-            msg = "login unsuccessful"
-            return render(request, 'userlogin.html', {'msg' : msg,})
-
-
-    return render(request, 'userlogin.html' , {'msg' : msg,})
 
 
 def advanced_search(request):
@@ -93,7 +73,7 @@ def advanced_search(request):
 
 def product_details(request, product_id):
     for product in products:
-        if product.idproduct == product_id:
+        if product.id == product_id:
             return render(request, 'product_details.html', {'product_details': product,
                                                             'products_list': products,
                                                             'shops_list': shops})
@@ -101,3 +81,43 @@ def product_details(request, product_id):
 
 def initial_page(request):
     return render(request, 'homepage.html', {'products_list': products, 'shops_list': shops})
+
+def validate_user(request, username, email):
+    try:
+        user = User.objects.get(Q(username=username) | Q(email=email))
+    except User.DoesNotExist:
+        user = None
+
+    if user is not None:
+        # user already exists
+        return True
+    else:
+        return False
+
+def login_user(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            messages.add_message(request, messages.SUCCESS, 'Welcome back!')
+            return render(request, 'homepage.html', {'products_list': products, 'shops_list': shops})
+        else:
+            messages.add_message(request, messages.ERROR, 'Invalid login')
+            return render(request, 'userlogin.html', {
+                'view': 'login',
+            })
+    else:
+        return render(request, 'userlogin.html', {
+            'view': 'login',
+        })
+
+
+@login_required
+def logout_user(request):
+    logout(request)
+    msg = "Hope to see you soon! :)"
+    messages.add_message(request, messages.INFO, msg)
+    return redirect('login_user')

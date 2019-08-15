@@ -1,47 +1,338 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="43c14468-c35d-4f24-abc3-4036e39e493e" name="Default Changelist" comment="create Shopowner table ,update shopstorage table">
-      <change afterPath="$PROJECT_DIR$/products/templates/advanced_search_dynamic_part.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/KIshore.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/templates/toast_messages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CSEfest2019/picture_puzzle/picture_puzzle/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CSEfest2019/picture_puzzle/picture_puzzle/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MyDjangoProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyDjangoProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MydjangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MydjangoProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MydjangoProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MydjangoProject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/11505805803639-Tommy-Hilfiger-Unisex-Navy-Blue--Red-Colourblocked-Backpack-151505805803402-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/OMEGA-Speedmaster-Professional-Front.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/Samsung_Unpacked_2017_Galaxy_S8_Launch_Event4_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/analogue-color-executive-190819.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/analogue-color-executive-190819_fTpkQBS.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner01_9fTR4aw.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner02_i9NIuLj.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner03_wg8yXHg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner09.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/banner15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/bata-men-brown-casual-shoes-f853428500-500x500.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/earphone-black.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/earphone-black_ZwImS6O.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/iphonex.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/main-product01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/main-product02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/main-product02_IoKH5yw.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/main-product03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/main-product04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/mylogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/img/mylogo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/product01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/product02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/product03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/product04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/product05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/product06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/product07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/product08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/sudc01-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/sudc01-8_BtrIdqD.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/sudc01-8_YJ8YvCi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/thumb-product01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/thumb-product02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/thumb-product03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/img/thumb-product04.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/products/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0002_discountdetails.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0003_shopstorage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0004_auto_20190701_1746.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0005_auto_20190701_1751.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0006_auto_20190701_1755.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0007_auto_20190701_1758.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0008_auto_20190703_1430.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0009_auto_20190703_2053.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0010_product_image.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0011_auto_20190703_2231.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0012_auto_20190703_2259.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0013_auto_20190703_2306.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0014_auto_20190703_2316.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0015_auto_20190707_1844.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0016_auto_20190710_0916.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0017_auto_20190710_0918.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0018_remove_product_image_url.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0019_product_rating.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0020_product_image_url.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0021_auto_20190710_0939.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0022_auto_20190710_0940.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0023_auto_20190710_0940.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0024_remove_product_image_url.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0025_auto_20190718_2006.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products/templates/advanced_search.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/advanced_search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/templates/advanced_search_dynamic_part.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/advanced_search_dynamic_part.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/templates/homepage_css.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/homepage_css.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/templates/homepage_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/homepage_header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/templates/homepage_js.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/homepage_js.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products/templates/homepage_navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/homepage_navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/templates/homepage_section_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/homepage_section_1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/templates/homepage_section_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/homepage_section_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/templates/homepage_section_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/homepage_section_3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/templates/product_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/product_details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products/templates/userlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/userlogin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/autocomplete.781713f30664.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/autocomplete.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/base.ae33e6383baa.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/base.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/changelists.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/changelists.f6dc691f8d62.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/changelists.f6dc691f8d62.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/dashboard.7ac78187c567.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/dashboard.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/fonts.168bab448fee.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/fonts.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/forms.005170d00292.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/forms.005170d00292.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/forms.31b2f650d92e.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/forms.31b2f650d92e.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/forms.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/login.252ffabd6548.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/login.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/responsive.3a465780d49f.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/responsive.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/responsive_rtl.51c7445ceeff.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/responsive_rtl.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/rtl.30f903442dc5.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/rtl.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/vendor/select2/LICENSE-SELECT2.7cf1de939f3b.md.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/vendor/select2/LICENSE-SELECT2.md.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.3805311d5fc1.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.min.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/vendor/select2/select2.min.d44571114a90.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/widgets.5e372b41c483.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/widgets.css.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/fonts/LICENSE.d273d63619c9.txt.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/fonts/LICENSE.txt.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/fonts/README.ab99e6b541ea.txt.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/fonts/README.txt.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/LICENSE.2c54f4e1ca1c.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/LICENSE.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/README.a70711a38d87.txt.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/README.txt.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/calendar-icons.39b290681a8b.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/calendar-icons.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_off.7a23bf31ef8a.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_off.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_on.0047eba25b67.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/gis/move_vertex_on.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-addlink.d519b3bab011.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-addlink.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-alert.034cc7d8a67f.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-alert.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-calendar.ac7aea671bea.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-calendar.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-changelink.18d2fd706348.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-changelink.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-clock.e1d4dfac3f2b.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-clock.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-deletelink.564ef9dc3854.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-deletelink.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-no.439e821418cd.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-no.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown-alt.81536e128bb6.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown-alt.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown.a18cb4398978.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-unknown.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-viewlink.41eb31f7826e.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-viewlink.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-yes.d2f9f035226a.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/icon-yes.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/inline-delete.fec1b761f254.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/inline-delete.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/search.7cf54ff789c6.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/search.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/selector-icons.b4555096cea2.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/selector-icons.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/sorting-icons.3a097b59f104.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/sorting-icons.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/tooltag-add.e59d620a9742.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/tooltag-add.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/tooltag-arrowright.bbfb788a849e.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/img/tooltag-arrowright.svg.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/SelectBox.b49f008d186b.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/SelectBox.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/SelectFilter2.32ea9335ce47.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/SelectFilter2.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/actions.2fb8e8349c22.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/actions.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/actions.min.5fa8cb0403f1.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/actions.min.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.c085703ffd82.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.ea0683bea064.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/admin/RelatedObjectLookups.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/autocomplete.cfd2c4dc8981.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/autocomplete.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/calendar.aae57adab5f6.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/calendar.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/cancel.d6b4b556c3aa.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/cancel.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/change_form.9e85003a1a38.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/change_form.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/collapse.c5b851e91226.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/collapse.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/collapse.min.44dfdb427845.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/collapse.min.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/core.9c3bce7d1006.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/core.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/inlines.3b3fb199b064.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/inlines.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/inlines.min.4d23f8660b21.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/inlines.min.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/jquery.init.95b62fa19378.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/jquery.init.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/popup_response.6ce3197f8fc8.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/popup_response.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.2f90da7170ec.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.min.85fd5e0fb706.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate.min.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate_init.0d3b53c37074.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/prepopulate_init.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/timeparse.51258861a46a.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/timeparse.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/urlify.4087f3e18796.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/urlify.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/LICENSE.a158210a2737.txt.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/LICENSE.txt.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.6fb03f669462.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.min.9c86871c4213.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/jquery/jquery.min.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/LICENSE.7cf1de939f3b.md.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/LICENSE.md.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ar.a8bb27ec698c.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ar.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/az.498dc667b34e.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/az.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/bg.89cba4df3c86.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/bg.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ca.2eaad4eb1950.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ca.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/cs.a68bcd293adc.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/cs.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/da.cbf897a0ae53.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/da.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/de.366d0aacb55f.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/de.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/el.5629ce65500f.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/el.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/en.05649b26c086.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/en.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/es.dc9dbf9d65df.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/es.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/et.c3953fb90b6b.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/et.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/eu.11b925456433.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/eu.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fa.98e52839b583.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fa.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fi.659847deefdc.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fi.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fr.b06a3340de45.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/fr.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/gl.78a87f7c0a51.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/gl.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/he.222d90ee0344.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/he.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hi.116a90b7111b.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hi.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hr.e1d2c70b4df5.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hr.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hu.db45641f10b2.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/hu.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/id.6ee6c9c64b94.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/id.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/is.808c7d47acb5.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/is.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/it.bae1661dbb77.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/it.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ja.19cf1ce8a03d.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ja.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/km.6074a9c5575c.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/km.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ko.74b17541834f.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ko.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lt.a0783b1bd159.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lt.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lv.07fe2a580d17.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/lv.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/mk.4986d7fc3ff3.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/mk.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ms.23e7b4369579.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ms.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nb.137e184004aa.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nb.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nl.c363ace8aa05.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/nl.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pl.76465b54a6b0.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pl.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt-BR.9efbbac4fda8.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt-BR.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt.5d6ccc53b347.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/pt.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ro.1ddc2b9980dc.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ro.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ru.d83609abf2e0.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/ru.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sk.a0f1a818d092.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sk.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr-Cyrl.2f3047aad49e.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr-Cyrl.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr.157bc6eb978e.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sr.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sv.2b21bb3f6110.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/sv.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/th.2a4ece4c4355.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/th.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/tr.c1925d8817db.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/tr.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/uk.3d56f311192d.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/uk.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/vi.3520aa7bdea8.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/vi.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-CN.419002d3c6c1.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-CN.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-TW.c021537edf2c.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/i18n/zh-TW.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.a95323cb4760.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.min.da607360bcc6.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/select2/select2.full.min.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/LICENSE.d64cecf4f157.txt.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/LICENSE.txt.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.1865b1cf5085.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.min.c95393b8ca4d.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/js/vendor/xregexp/xregexp.min.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/homepage/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/homepage/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/homepage/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/homepage/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/homepage/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/homepage/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/homepage/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/homepage/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/homepage/js/nouislider.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/homepage/js/nouislider.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/login/images/cover.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints>
+      <file url="file://$PROJECT_DIR$/products/templates/advanced_search.html" />
+    </disable_hints>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -66,25 +357,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/products/templates/homepage_navigation.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/products/templates/homepage_footer.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/products/apps.py">
+        <entry file="file://$PROJECT_DIR$/products/templatetags/homepage_extras.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="48">
               <caret line="2" selection-start-line="2" selection-end-line="2" />
@@ -93,19 +366,70 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/products/form.py">
+        <entry file="file://$PROJECT_DIR$/products/templates/homepage_navigation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+            <state relative-caret-position="68">
+              <caret line="12" column="53" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/products/static/homepage/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="14">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/products/templates/homepage_section_2.html">
+        <entry file="file://$PROJECT_DIR$/products/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
+            <state relative-caret-position="1704">
+              <caret line="74" column="84" selection-start-line="74" selection-start-column="84" selection-end-line="74" selection-end-column="84" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/products/templates/homepage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/products/templates/homepage_css.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/products/templates/homepage_footer.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/products/templates/homepage_header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+              <folding>
+                <element signature="e#913#948#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -113,50 +437,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/products/templates/homepage_section_1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="32" column="55" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="55" />
+            <state relative-caret-position="792">
+              <caret line="33" column="54" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/products/admin.py">
+        <entry file="file://$PROJECT_DIR$/products/templates/advanced_search.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MydjangoProject/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3">
-              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/products/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="268">
+              <caret line="78" column="19" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -173,41 +464,38 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&quot; %</find>
-      <find>.js&quot;</find>
-      <find>&quot;&gt;</find>
-      <find>src=&quot;</find>
-      <find>homepage</find>
-      <find>media</find>
-      <find>media/js/</find>
-      <find>href=&quot;{</find>
-      <find>' %}</find>
-      <find>href=&quot;/</find>
-      <find>href=&quot;</find>
-      <find>popper</find>
-      <find>.jpg</find>
-      <find>/{</find>
-      <find>href</find>
-      <find>-1</find>
-      <find>products_one_page 0</find>
-      <find>'advanced_search'</find>
-      <find>sort</find>
-      <find>submit</find>
-      <find>home</find>
-      <find>Password</find>
-      <find>form</find>
-      <find>True</find>
-      <find>managed</find>
-      <find>ForeignKey</find>
-      <find>hi</find>
-      <find>_id</find>
       <find>Shopstorage</find>
       <find>ShopStorage</find>
+      <find>msg</find>
+      <find>user</find>
+      <find>sign up</find>
+      <find>src=&quot;/</find>
+      <find>=&quot;/</find>
+      <find>&quot;/</find>
+      <find>image</find>
+      <find>mater</find>
+      <find>/static/login/images</find>
+      <find>/static/login/images/</find>
+      <find>.jpg</find>
+      <find>homepage/css/bootstrap.min.css</find>
+      <find>toastr</find>
+      <find>toastr.js</find>
+      <find>django.contrib.messages.context_processors.messages</find>
+      <find>Product</find>
+      <find>onetoone</find>
+      <find>SuperCategory</find>
+      <find>default</find>
+      <find>idproduct</find>
+      <find>productname</find>
+      <find>max_length</find>
+      <find>float: right</find>
+      <find>view-active</find>
+      <find>view</find>
+      <find>Any Location</find>
+      <find>sign</find>
+      <find>dropdown side-dropdown</find>
     </findStrings>
     <replaceStrings>
-      <replace>managed = True</replace>
-      <replace>src=&quot;media/js/</replace>
-      <replace>./static</replace>
       <replace>static</replace>
       <replace>href = {% static</replace>
       <replace>&quot;{%</replace>
@@ -235,19 +523,22 @@
       <replace>5</replace>
       <replace>OneToOneField</replace>
       <replace>ShopProduct</replace>
+      <replace>src=&quot;</replace>
+      <replace>=&quot;</replace>
+      <replace>id</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/products/templates/advanced_search.html" root0="SKIP_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/products/templates/homepage_section_1.html" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/products/templates/homepage_footer.html" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/products/migrations/urls.py" />
         <option value="$PROJECT_DIR$/products/apps.py" />
         <option value="$PROJECT_DIR$/MydjangoProject/__init__.py" />
         <option value="$PROJECT_DIR$/products/templates/basic.html" />
@@ -262,45 +553,50 @@
         <option value="$PROJECT_DIR$/products/templates/homepage_section_1" />
         <option value="$PROJECT_DIR$/products/templates/intial_page_header.html" />
         <option value="$PROJECT_DIR$/products/templates/intial_page_navigation.html" />
-        <option value="$PROJECT_DIR$/products/templates/homepage_section_2.html" />
-        <option value="$PROJECT_DIR$/products/templates/homepage_section_3.html" />
         <option value="$PROJECT_DIR$/products/templates/homepage_footer.html" />
         <option value="$PROJECT_DIR$/products/basejs.html" />
         <option value="$PROJECT_DIR$/products/templates/base.html" />
         <option value="$PROJECT_DIR$/shopDB/views.py" />
         <option value="$PROJECT_DIR$/products/templates/user_login.html" />
-        <option value="$PROJECT_DIR$/MydjangoProject/urls.py" />
         <option value="$PROJECT_DIR$/reqiurements.txt" />
         <option value="$PROJECT_DIR$/products/userlogin.html" />
         <option value="$PROJECT_DIR$/products/templates/basejs.html" />
         <option value="$PROJECT_DIR$/products/templates/baseheader.html" />
         <option value="$PROJECT_DIR$/products/templates/initial_page_header.html" />
-        <option value="$PROJECT_DIR$/products/templates/homepage_js.html" />
-        <option value="$PROJECT_DIR$/products/templates/homepage_css.html" />
         <option value="$PROJECT_DIR$/products/templates/initialpage.html" />
-        <option value="$PROJECT_DIR$/products/templates/homepage_section_1.html" />
-        <option value="$PROJECT_DIR$/products/templates/product_details.html" />
         <option value="$PROJECT_DIR$/static/login/fonts/font-awesome-4.7.0/less/variables.less" />
         <option value="$PROJECT_DIR$/products/templates/homepage.html" />
-        <option value="$PROJECT_DIR$/products/urls.py" />
-        <option value="$PROJECT_DIR$/products/templates/homepage_header.html" />
         <option value="$PROJECT_DIR$/products/templatetags/homepage_extras.py" />
         <option value="$PROJECT_DIR$/products/templates/advanced_search_dyamic_part.html" />
-        <option value="$PROJECT_DIR$/products/templates/advanced_search_dynamic_part.html" />
-        <option value="$PROJECT_DIR$/products/templates/advanced_search.html" />
-        <option value="$PROJECT_DIR$/products/templates/homepage_navigation.html" />
-        <option value="$PROJECT_DIR$/products/templates/userlogin.html" />
-        <option value="$PROJECT_DIR$/products/views.py" />
+        <option value="$PROJECT_DIR$/products/urls.py" />
         <option value="$PROJECT_DIR$/MydjangoProject/settings.py" />
+        <option value="$PROJECT_DIR$/products/templates/homepage_js.html" />
+        <option value="$PROJECT_DIR$/MydjangoProject/urls.py" />
+        <option value="$PROJECT_DIR$/../CSEfest2019/picture_puzzle/core/templates/core_front_end/toast_messages.html" />
+        <option value="$PROJECT_DIR$/products/static/login/toastr/js/toastr.min.js" />
+        <option value="$PROJECT_DIR$/products/templates/toast_messages.html" />
+        <option value="$PROJECT_DIR$/products/templates/userlogin.html" />
         <option value="$PROJECT_DIR$/products/admin.py" />
+        <option value="$PROJECT_DIR$/products/views.py" />
+        <option value="$PROJECT_DIR$/products/templates/homepage_section_1.html" />
+        <option value="$PROJECT_DIR$/products/templates/homepage_section_2.html" />
+        <option value="$PROJECT_DIR$/products/templates/homepage_section_3.html" />
+        <option value="$PROJECT_DIR$/products/templates/product_details.html" />
+        <option value="$PROJECT_DIR$/products/templates/advanced_search_dynamic_part.html" />
         <option value="$PROJECT_DIR$/products/models.py" />
+        <option value="$PROJECT_DIR$/products/static/homepage/css/style.css" />
+        <option value="$PROJECT_DIR$/products/templates/advanced_search.html" />
+        <option value="$PROJECT_DIR$/products/templates/homepage_css.html" />
+        <option value="$PROJECT_DIR$/products/templates/homepage_header.html" />
+        <option value="$PROJECT_DIR$/products/templates/homepage_navigation.html" />
+        <option value="$PROJECT_DIR$/products/static/homepage/js/main.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="320" />
-    <option name="y" value="1" />
-    <option name="width" value="697" />
+    <option name="x" value="-224" />
+    <option name="y" value="75" />
+    <option name="width" value="1382" />
     <option name="height" value="775" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -309,6 +605,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -330,6 +627,27 @@
               <item name="MyDjangoProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyDjangoProject" type="462c0819:PsiDirectoryNode" />
               <item name="products" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyDjangoProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyDjangoProject" type="462c0819:PsiDirectoryNode" />
+              <item name="products" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="homepage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyDjangoProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyDjangoProject" type="462c0819:PsiDirectoryNode" />
+              <item name="products" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="homepage" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyDjangoProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyDjangoProject" type="462c0819:PsiDirectoryNode" />
+              <item name="products" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -338,32 +656,74 @@
               <item name="products" type="462c0819:PsiDirectoryNode" />
               <item name="templatetags" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MyDjangoProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSEfest2019" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyDjangoProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSEfest2019" type="462c0819:PsiDirectoryNode" />
+              <item name="picture_puzzle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyDjangoProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSEfest2019" type="462c0819:PsiDirectoryNode" />
+              <item name="picture_puzzle" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyDjangoProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSEfest2019" type="462c0819:PsiDirectoryNode" />
+              <item name="picture_puzzle" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyDjangoProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSEfest2019" type="462c0819:PsiDirectoryNode" />
+              <item name="picture_puzzle" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="core_front_end" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyDjangoProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSEfest2019" type="462c0819:PsiDirectoryNode" />
+              <item name="picture_puzzle" type="462c0819:PsiDirectoryNode" />
+              <item name="picture_puzzle" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/MydjangoProject/settings.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.jscs" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.jscs" value="" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\1505028" />
+      <recent name="F:\1505028\" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\1505028\MyDjangoProject\products\templates" />
     </key>
@@ -382,6 +742,9 @@
   </component>
   <component name="RunManager" selected="Django server.server">
     <configuration name="advanced_search.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MyDjangoProject/products/templates/advanced_search.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="toast_messages.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MyDjangoProject/products/templates/toast_messages.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="server" type="Python.DjangoServer" factoryName="Django server">
@@ -410,6 +773,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.toast_messages.html" />
         <item itemvalue="JavaScript Debug.advanced_search.html" />
       </list>
     </recent_temporary>
@@ -437,12 +801,21 @@
       <workItem from="1563525543155" duration="215000" />
       <workItem from="1563660295620" duration="10797000" />
       <workItem from="1563881791718" duration="50582000" />
-      <workItem from="1564504684710" duration="8140000" />
+      <workItem from="1564504684710" duration="19100000" />
+      <workItem from="1565170915721" duration="3092000" />
+      <workItem from="1565178045096" duration="990000" />
+      <workItem from="1565237431736" duration="16951000" />
+      <workItem from="1565406283931" duration="2785000" />
+      <workItem from="1565409203304" duration="21838000" />
+      <workItem from="1565718762808" duration="1339000" />
+      <workItem from="1565760219826" duration="1379000" />
+      <workItem from="1565872582381" duration="5043000" />
+      <workItem from="1565878530562" duration="8387000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169534000" />
+    <option name="totallyTimeSpent" value="242298000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -455,22 +828,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.3089124" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.17145015" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.24981412" />
+      <window_info anchor="bottom" id="Inspection Results" weight="0.32874617" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.62691134" />
-      <window_info anchor="bottom" id="Python Console" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.2560423" side_tool="true" weight="0.51376146" />
+      <window_info anchor="bottom" id="Python Console" order="1" weight="0.32874617" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.25679758" side_tool="true" weight="0.5749236" />
       <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" weight="0.6880734" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.17737003" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.2584098" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.3119266" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.39908257" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.7439577" weight="0.93272173" />
+      <window_info anchor="bottom" id="TODO" order="9" weight="0.32874617" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.7432024" visible="true" weight="0.82263" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32874617" />
       <window_info anchor="bottom" id="manage.py@MyDjangoProject" order="13" weight="0.13761468" />
@@ -549,83 +922,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/shopDB/admin.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shopDB/templates/view_prod_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="31" column="67" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shopDB/templates/products_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/view_prod_list.html" />
-    <entry file="file://$PROJECT_DIR$/shopDB/templates/shopHome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/css/style.css" />
-    <entry file="file://$PROJECT_DIR$/products/templatetags/_init_.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/media/css/font-awesome.min.css" />
-    <entry file="file://$PROJECT_DIR$/shopDB/templates/product_detail-in-card.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shopDB/templates/product_detail.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/homepage_section_1" />
-    <entry file="file://$PROJECT_DIR$/products/templates/index.html" />
-    <entry file="file://$PROJECT_DIR$/products/templates/homepage_section_3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shopDB/templates/login_shop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="90" column="1" lean-forward="true" selection-start-line="90" selection-start-column="1" selection-end-line="90" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/base.html" />
-    <entry file="file://$PROJECT_DIR$/shopDB/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shopDB/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/login.html" />
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/urls/conf.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -635,213 +931,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/products/templates/user_login.html" />
     <entry file="file://$PROJECT_DIR$/requirements.txt" />
-    <entry file="file://$PROJECT_DIR$/MydjangoProject/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-          <folding>
-            <element signature="e#639#671#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/products/userlogin.html" />
-    <entry file="uml://DjangoModelDependency/#MyDjangoProject">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DjangoModelDependency</ID>
-          <OriginalElement>#MyDjangoProject</OriginalElement>
-          <nodes>
-            <node x="876.0" y="445.0">products.models.AuthUserUserPermissions</node>
-            <node x="1386.0" y="445.0">products.models.DjangoAdminLog</node>
-            <node x="474.0" y="445.0">products.models.AuthUserGroups</node>
-            <node x="1497.25" y="198.0">products.models.Payment</node>
-            <node x="356.25" y="84.0">products.models.Product</node>
-            <node x="1030.611111111111" y="277.0">products.models.DjangoContentType</node>
-            <node x="816.4115384615384" y="84.0">products.models.Shop</node>
-            <node x="935.2916666666667" y="0.0">products.models.User</node>
-            <node x="866.0" y="524.0">products.models.ShopOwner</node>
-            <node x="523.6296296296296" y="361.0">products.models.AuthPermission</node>
-            <node x="1356.8833333333332" y="84.0">products.models.Cart</node>
-            <node x="26.25" y="84.0">products.models.Discount</node>
-            <node x="451.0" y="524.0">products.models.DjangoSession</node>
-            <node x="1043.8055555555557" y="361.0">products.models.AuthUser</node>
-            <node x="0.0" y="445.0">products.models.AuthGroupPermissions</node>
-            <node x="813.25" y="198.0">products.models.Shoplog</node>
-            <node x="0.0" y="524.0">products.models.DjangoMigrations</node>
-            <node x="70.5740740740739" y="361.0">products.models.AuthGroup</node>
-            <node x="0.0" y="198.0">products.models.DiscountDetails</node>
-            <node x="1131.25" y="198.0">products.models.CartDetails</node>
-            <node x="447.25" y="198.0">products.models.ShopStorage</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="products.models.Shop" target="products.models.User">
-              <point x="0.0" y="-17.0" />
-              <point x="947.4115384615384" y="64.0" />
-              <point x="1013.8916666666667" y="64.0" />
-              <point x="-52.39999999999998" y="17.0" />
-            </edge>
-            <edge source="products.models.CartDetails" target="products.models.Product">
-              <point x="-115.33333333333331" y="-17.0" />
-              <point x="1188.9166666666667" y="148.0" />
-              <point x="617.0" y="148.0" />
-              <point x="111.75" y="17.0" />
-            </edge>
-            <edge source="products.models.DiscountDetails" target="products.models.Discount">
-              <point x="-49.25" y="-17.0" />
-              <point x="147.75" y="178.0" />
-              <point x="181.25" y="178.0" />
-              <point x="0.0" y="17.0" />
-            </edge>
-            <edge source="products.models.Shoplog" target="products.models.Shop">
-              <point x="0.0" y="-17.0" />
-              <point x="962.25" y="178.0" />
-              <point x="980.1615384615384" y="178.0" />
-              <point x="32.75" y="17.0" />
-            </edge>
-            <edge source="products.models.ShopStorage" target="products.models.Product">
-              <point x="-86.5" y="-17.0" />
-              <point x="533.75" y="158.0" />
-              <point x="468.0" y="158.0" />
-              <point x="-37.25" y="17.0" />
-            </edge>
-            <edge source="products.models.DjangoAdminLog" target="products.models.AuthUser">
-              <point x="-95.5" y="-17.0" />
-              <point x="1481.5" y="425.0" />
-              <point x="1302.138888888889" y="425.0" />
-              <point x="103.33333333333337" y="17.0" />
-            </edge>
-            <edge source="products.models.Payment" target="products.models.Cart">
-              <point x="-74.5" y="-17.0" />
-              <point x="1571.75" y="178.0" />
-              <point x="1553.3833333333332" y="178.0" />
-              <point x="65.5" y="17.0" />
-            </edge>
-            <edge source="products.models.DiscountDetails" target="products.models.Shop">
-              <point x="147.75" y="-17.0" />
-              <point x="344.75" y="168.0" />
-              <point x="849.1615384615384" y="168.0" />
-              <point x="-98.25" y="17.0" />
-            </edge>
-            <edge source="products.models.AuthUserGroups" target="products.models.AuthUser">
-              <point x="95.5" y="-17.0" />
-              <point x="760.5" y="425.0" />
-              <point x="1095.4722222222222" y="425.0" />
-              <point x="-103.33333333333331" y="17.0" />
-            </edge>
-            <edge source="products.models.CartDetails" target="products.models.Cart">
-              <point x="115.33333333333337" y="-17.0" />
-              <point x="1419.5833333333335" y="178.0" />
-              <point x="1422.3833333333332" y="178.0" />
-              <point x="-65.5" y="17.0" />
-            </edge>
-            <edge source="products.models.AuthGroupPermissions" target="products.models.AuthPermission">
-              <point x="113.5" y="-17.0" />
-              <point x="340.5" y="425.0" />
-              <point x="619.1296296296296" y="425.0" />
-              <point x="-95.5" y="17.0" />
-            </edge>
-            <edge source="products.models.DiscountDetails" target="products.models.User">
-              <point x="-147.75" y="-17.0" />
-              <point x="49.25" y="178.0" />
-              <point x="15.75" y="178.0" />
-              <point x="15.75" y="54.0" />
-              <point x="961.4916666666668" y="54.0" />
-              <point x="-104.79999999999995" y="17.0" />
-            </edge>
-            <edge source="products.models.Cart" target="products.models.User">
-              <point x="0.0" y="-17.0" />
-              <point x="1487.8833333333332" y="64.0" />
-              <point x="1118.6916666666666" y="64.0" />
-              <point x="52.39999999999998" y="17.0" />
-            </edge>
-            <edge source="products.models.Shoplog" target="products.models.Product">
-              <point x="-99.33333333333326" y="-17.0" />
-              <point x="862.9166666666667" y="158.0" />
-              <point x="542.5" y="158.0" />
-              <point x="37.25" y="17.0" />
-            </edge>
-            <edge source="products.models.AuthPermission" target="products.models.DjangoContentType">
-              <point x="0.0" y="-17.0" />
-              <point x="714.6296296296296" y="336.0" />
-              <point x="1135.111111111111" y="336.0" />
-              <point x="-104.5" y="17.0" />
-            </edge>
-            <edge source="products.models.CartDetails" target="products.models.Shop">
-              <point x="0.0" y="-17.0" />
-              <point x="1304.25" y="138.0" />
-              <point x="1045.6615384615384" y="138.0" />
-              <point x="98.25" y="17.0" />
-            </edge>
-            <edge source="products.models.DiscountDetails" target="products.models.Product">
-              <point x="49.25" y="-17.0" />
-              <point x="246.25" y="158.0" />
-              <point x="393.5" y="158.0" />
-              <point x="-111.75" y="17.0" />
-            </edge>
-            <edge source="products.models.AuthUserUserPermissions" target="products.models.AuthPermission">
-              <point x="-122.5" y="-17.0" />
-              <point x="998.5" y="415.0" />
-              <point x="810.1296296296296" y="415.0" />
-              <point x="95.5" y="17.0" />
-            </edge>
-            <edge source="products.models.Shoplog" target="products.models.User">
-              <point x="99.33333333333337" y="-17.0" />
-              <point x="1061.5833333333335" y="178.0" />
-              <point x="1109.8891025641026" y="178.0" />
-              <point x="1109.8891025641026" y="64.0" />
-              <point x="1066.2916666666667" y="64.0" />
-              <point x="0.0" y="17.0" />
-            </edge>
-            <edge source="products.models.AuthUserUserPermissions" target="products.models.AuthUser">
-              <point x="122.5" y="-17.0" />
-              <point x="1243.5" y="425.0" />
-              <point x="1198.8055555555557" y="425.0" />
-              <point x="0.0" y="17.0" />
-            </edge>
-            <edge source="products.models.ShopStorage" target="products.models.Shop">
-              <point x="86.5" y="-17.0" />
-              <point x="706.75" y="178.0" />
-              <point x="914.6615384615384" y="178.0" />
-              <point x="-32.75" y="17.0" />
-            </edge>
-            <edge source="products.models.Payment" target="products.models.User">
-              <point x="74.5" y="-17.0" />
-              <point x="1720.75" y="178.0" />
-              <point x="1702.1615384615384" y="178.0" />
-              <point x="1702.1615384615384" y="54.0" />
-              <point x="1171.0916666666667" y="54.0" />
-              <point x="104.79999999999995" y="17.0" />
-            </edge>
-            <edge source="products.models.AuthGroupPermissions" target="products.models.AuthGroup">
-              <point x="-113.5" y="-17.0" />
-              <point x="113.5" y="425.0" />
-              <point x="151.0740740740739" y="425.0" />
-              <point x="-80.5" y="17.0" />
-            </edge>
-            <edge source="products.models.DjangoAdminLog" target="products.models.DjangoContentType">
-              <point x="95.5" y="-17.0" />
-              <point x="1672.5" y="336.0" />
-              <point x="1344.111111111111" y="336.0" />
-              <point x="104.5" y="17.0" />
-            </edge>
-            <edge source="products.models.AuthUserGroups" target="products.models.AuthGroup">
-              <point x="-95.5" y="-17.0" />
-              <point x="569.5" y="415.0" />
-              <point x="312.0740740740739" y="415.0" />
-              <point x="80.5" y="17.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.5187224669603524" x="453.0" y="267.0" />
-          <SelectedNodes>
-            <node>products.models.AuthGroup</node>
-          </SelectedNodes>
-          <Categories />
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/template/loader_tags.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1">
@@ -856,41 +946,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/product_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/utils/datastructures.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="111" column="8" selection-start-line="111" selection-start-column="8" selection-end-line="111" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/templatetags/homepage_extras.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/homepage_css.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/homepage_js.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/advanced_search_dynamic_part.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="51" column="15" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -901,61 +960,370 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/homepage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/userlogin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1608">
-          <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/homepage_header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="888">
-          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/advanced_search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="87" column="75" selection-start-line="87" selection-start-column="75" selection-end-line="87" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shopDB/models.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/products/form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/contrib/admin/options.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="527" column="20" selection-start-line="527" selection-start-column="20" selection-end-line="527" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/contrib/auth/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3144">
+          <caret line="142" column="7" selection-start-line="142" selection-start-column="7" selection-end-line="142" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/products/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        <state relative-caret-position="216">
+          <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/products/views.py">
+    <entry file="file://$PROJECT_DIR$/shopDB/templates/product_detail.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MydjangoProject/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1016">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="306">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#639#671#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/homepage_footer.html">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        <state relative-caret-position="314">
+          <caret line="428" selection-start-line="428" selection-end-line="428" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CSEfest2019/picture_puzzle/puzzle/static/js/toastr.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CSEfest2019/picture_puzzle/picture_puzzle/static/js/toastr.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4794" lean-forward="true" selection-start-column="4794" selection-end-column="4794" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CSEfest2019/picture_puzzle/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CSEfest2019/picture_puzzle/core/templates/core_front_end/load_css.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CSEfest2019/picture_puzzle/core/templates/core_front_end/toast_messages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MydjangoProject/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1512">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templates/toast_messages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/static/login/toastr/js/toastr.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#F:/1505028/MyDjangoProject/products/models.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID />
+          <OriginalElement>#F:/1505028/MyDjangoProject/products/models.py</OriginalElement>
+          <nodes>
+            <node x="0.0" y="198.0">products.models.Cart</node>
+            <node x="1974.0" y="198.0">products.models.Payment</node>
+            <node x="1429.5" y="84.0">django.db.models.base.Model</node>
+            <node x="1248.0" y="198.0">products.models.ShopProduct</node>
+            <node x="279.0" y="198.0">products.models.Shop</node>
+            <node x="558.0" y="198.0">products.models.Profile</node>
+            <node x="1425.0" y="0.0">object</node>
+            <node x="2289.0" y="198.0">products.models.Product</node>
+            <node x="873.0000000000001" y="198.0">products.models.CartProducts</node>
+            <node x="2604.0" y="198.0">products.models.ProductDiscount</node>
+            <node x="3015.0" y="198.0">products.models.UserDiscount</node>
+            <node x="1611.0" y="198.0">products.models.PurchaseLog</node>
+            <node x="1536.0" y="0.0">django.db.models.base.ModelBase</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="django.db.models.base.Model" target="django.db.models.base.ModelBase">
+              <point x="85.75" y="-17.0" />
+              <point x="1686.75" y="59.0" />
+              <point x="1731.5" y="59.0" />
+              <point x="0.0" y="17.0" />
+            </edge>
+            <edge source="products.models.UserDiscount" target="django.db.models.base.Model">
+              <point x="0.0" y="-17.0" />
+              <point x="3192.5" y="138.0" />
+              <point x="1755.3500000000004" y="138.0" />
+              <point x="154.35000000000014" y="17.0" />
+            </edge>
+            <edge source="products.models.ShopProduct" target="django.db.models.base.Model">
+              <point x="0.0" y="-17.0" />
+              <point x="1419.5" y="178.0" />
+              <point x="1583.85" y="178.0" />
+              <point x="-17.15000000000009" y="17.0" />
+            </edge>
+            <edge source="django.db.models.base.Model" target="object">
+              <point x="-85.75" y="-17.0" />
+              <point x="1515.25" y="59.0" />
+              <point x="1470.5" y="59.0" />
+              <point x="0.0" y="17.0" />
+            </edge>
+            <edge source="products.models.PurchaseLog" target="django.db.models.base.Model">
+              <point x="0.0" y="-17.0" />
+              <point x="1782.5" y="178.0" />
+              <point x="1618.15" y="178.0" />
+              <point x="17.15000000000009" y="17.0" />
+            </edge>
+            <edge source="products.models.CartProducts" target="django.db.models.base.Model">
+              <point x="0.0" y="-17.0" />
+              <point x="1050.5" y="168.0" />
+              <point x="1549.5500000000002" y="168.0" />
+              <point x="-51.450000000000045" y="17.0" />
+            </edge>
+            <edge source="products.models.Payment" target="django.db.models.base.Model">
+              <point x="0.0" y="-17.0" />
+              <point x="2121.5" y="168.0" />
+              <point x="1652.4500000000003" y="168.0" />
+              <point x="51.450000000000045" y="17.0" />
+            </edge>
+            <edge source="products.models.Cart" target="django.db.models.base.Model">
+              <point x="0.0" y="-17.0" />
+              <point x="129.5" y="138.0" />
+              <point x="1446.65" y="138.0" />
+              <point x="-154.3499999999999" y="17.0" />
+            </edge>
+            <edge source="products.models.ProductDiscount" target="django.db.models.base.Model">
+              <point x="0.0" y="-17.0" />
+              <point x="2799.5" y="148.0" />
+              <point x="1721.0500000000002" y="148.0" />
+              <point x="120.05000000000018" y="17.0" />
+            </edge>
+            <edge source="products.models.Shop" target="django.db.models.base.Model">
+              <point x="0.0" y="-17.0" />
+              <point x="408.5" y="148.0" />
+              <point x="1480.9500000000003" y="148.0" />
+              <point x="-120.04999999999995" y="17.0" />
+            </edge>
+            <edge source="products.models.Product" target="django.db.models.base.Model">
+              <point x="0.0" y="-17.0" />
+              <point x="2436.5" y="158.0" />
+              <point x="1686.75" y="158.0" />
+              <point x="85.75" y="17.0" />
+            </edge>
+            <edge source="products.models.Profile" target="django.db.models.base.Model">
+              <point x="0.0" y="-17.0" />
+              <point x="705.5" y="158.0" />
+              <point x="1515.25" y="158.0" />
+              <point x="-85.75" y="17.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.328023598820059" x="722.0" y="-71.0" />
+          <SelectedNodes>
+            <node>django.db.models.base.ModelBase</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DjangoModelDependency/#MyDjangoProject">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID />
+          <OriginalElement>#MyDjangoProject</OriginalElement>
+          <nodes>
+            <node x="1851.2841666666664" y="346.0">products.models.Cart</node>
+            <node x="0.0" y="440.0">products.models.ShopProduct</node>
+            <node x="1123.2183333333332" y="346.0">products.models.Payment</node>
+            <node x="143.8974999999998" y="346.0">products.models.Shop</node>
+            <node x="1533.2841666666664" y="346.0">products.models.Profile</node>
+            <node x="613.2841666666664" y="252.0">products.models.Product</node>
+            <node x="667.7183333333332" y="346.0">products.models.ProductDiscount</node>
+            <node x="1343.9466666666667" y="440.0">products.models.CartProducts</node>
+            <node x="1291.3" y="0.0">django.contrib.contenttypes.models.ContentType</node>
+            <node x="732.0" y="440.0">products.models.UserDiscount</node>
+            <node x="1259.3125" y="168.0">django.contrib.auth.models.Group</node>
+            <node x="1345.3" y="84.0">django.contrib.auth.models.Permission</node>
+            <node x="366.0" y="440.0">products.models.PurchaseLog</node>
+            <node x="1372.0625" y="252.0">django.contrib.auth.models.User</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="products.models.UserDiscount" target="products.models.Shop">
+              <point x="-119.33333333333326" y="-17.0" />
+              <point x="791.6666666666667" y="400.0" />
+              <point x="362.23083333333307" y="400.0" />
+              <point x="87.33333333333331" y="17.0" />
+            </edge>
+            <edge source="products.models.CartProducts" target="products.models.Product">
+              <point x="-89.5" y="-17.0" />
+              <point x="1433.4466666666667" y="400.0" />
+              <point x="1112.7183333333332" y="400.0" />
+              <point x="1112.7183333333332" y="316.0" />
+              <point x="821.8841666666665" y="316.0" />
+              <point x="59.60000000000002" y="17.0" />
+            </edge>
+            <edge source="products.models.PurchaseLog" target="products.models.Product">
+              <point x="0.0" y="-17.0" />
+              <point x="539.0" y="420.0" />
+              <point x="505.8016666666665" y="420.0" />
+              <point x="505.8016666666665" y="326.0" />
+              <point x="702.6841666666664" y="326.0" />
+              <point x="-59.60000000000002" y="17.0" />
+            </edge>
+            <edge source="products.models.Profile" target="django.contrib.auth.models.User">
+              <point x="0.0" y="-17.0" />
+              <point x="1682.2841666666664" y="326.0" />
+              <point x="1647.8624999999997" y="326.0" />
+              <point x="78.79999999999995" y="17.0" />
+            </edge>
+            <edge source="django.contrib.auth.models.User" target="django.contrib.auth.models.Permission">
+              <point x="98.5" y="-17.0" />
+              <point x="1667.5625" y="227.0" />
+              <point x="1675.8125" y="227.0" />
+              <point x="1675.8125" y="143.0" />
+              <point x="1694.8" y="143.0" />
+              <point x="116.5" y="17.0" />
+            </edge>
+            <edge source="django.contrib.auth.models.Permission" target="django.contrib.contenttypes.models.ContentType">
+              <point x="0.0" y="-17.0" />
+              <point x="0.0" y="17.0" />
+            </edge>
+            <edge source="products.models.UserDiscount" target="products.models.ProductDiscount">
+              <point x="0.0" y="-17.0" />
+              <point x="911.0" y="400.0" />
+              <point x="864.7183333333332" y="400.0" />
+              <point x="0.0" y="17.0" />
+            </edge>
+            <edge source="products.models.ShopProduct" target="products.models.Shop">
+              <point x="86.5" y="-17.0" />
+              <point x="259.5" y="420.0" />
+              <point x="187.56416666666655" y="420.0" />
+              <point x="-87.33333333333331" y="17.0" />
+            </edge>
+            <edge source="products.models.PurchaseLog" target="django.contrib.auth.models.User">
+              <point x="115.33333333333337" y="-17.0" />
+              <point x="654.3333333333334" y="410.0" />
+              <point x="1431.7183333333332" y="410.0" />
+              <point x="1431.7183333333332" y="326.0" />
+              <point x="1490.2624999999998" y="326.0" />
+              <point x="-78.79999999999995" y="17.0" />
+            </edge>
+            <edge source="products.models.Payment" target="django.contrib.auth.models.User">
+              <point x="74.5" y="-17.0" />
+              <point x="1346.7183333333332" y="326.0" />
+              <point x="1411.4625" y="326.0" />
+              <point x="-157.5999999999999" y="17.0" />
+            </edge>
+            <edge source="products.models.UserDiscount" target="django.contrib.auth.models.User">
+              <point x="119.33333333333326" y="-17.0" />
+              <point x="1030.3333333333333" y="420.0" />
+              <point x="1522.7841666666664" y="420.0" />
+              <point x="1522.7841666666664" y="326.0" />
+              <point x="1569.0625" y="326.0" />
+              <point x="0.0" y="17.0" />
+            </edge>
+            <edge source="products.models.PurchaseLog" target="products.models.Shop">
+              <point x="-115.33333333333331" y="-17.0" />
+              <point x="423.66666666666674" y="420.0" />
+              <point x="274.8974999999998" y="420.0" />
+              <point x="0.0" y="17.0" />
+            </edge>
+            <edge source="django.contrib.auth.models.User" target="django.contrib.auth.models.Group">
+              <point x="-98.5" y="-17.0" />
+              <point x="1470.5625" y="227.0" />
+              <point x="1462.3125" y="227.0" />
+              <point x="0.0" y="17.0" />
+            </edge>
+            <edge source="products.models.ShopProduct" target="products.models.Product">
+              <point x="-86.5" y="-17.0" />
+              <point x="86.5" y="420.0" />
+              <point x="115.11333333333323" y="420.0" />
+              <point x="115.11333333333323" y="316.0" />
+              <point x="643.0841666666663" y="316.0" />
+              <point x="-119.20000000000005" y="17.0" />
+            </edge>
+            <edge source="products.models.ProductDiscount" target="products.models.Product">
+              <point x="-1.1368683772161603E-13" y="-17.0" />
+              <point x="864.718333333333" y="326.0" />
+              <point x="762.2841666666664" y="326.0" />
+              <point x="0.0" y="17.0" />
+            </edge>
+            <edge source="django.contrib.auth.models.Group" target="django.contrib.auth.models.Permission">
+              <point x="0.0" y="-17.0" />
+              <point x="-116.5" y="17.0" />
+            </edge>
+            <edge source="products.models.CartProducts" target="products.models.Cart">
+              <point x="89.5" y="-17.0" />
+              <point x="1612.4466666666667" y="420.0" />
+              <point x="1982.2841666666664" y="420.0" />
+              <point x="0.0" y="17.0" />
+            </edge>
+            <edge source="products.models.Payment" target="products.models.Product">
+              <point x="-74.5" y="-17.0" />
+              <point x="1197.7183333333332" y="306.0" />
+              <point x="881.4841666666664" y="306.0" />
+              <point x="119.20000000000005" y="17.0" />
+            </edge>
+            <edge source="products.models.Cart" target="django.contrib.auth.models.User">
+              <point x="0.0" y="-17.0" />
+              <point x="1982.2841666666664" y="326.0" />
+              <point x="1726.6625" y="326.0" />
+              <point x="157.60000000000014" y="17.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.521087160262418" x="1053.0" y="237.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
@@ -966,65 +1334,187 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/products/form.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/homepage_section_2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/homepage_section_1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="32" column="55" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/homepage_navigation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MydjangoProject/settings.py">
+    <entry file="file://$PROJECT_DIR$/../CSEfest2019/picture_puzzle/core/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/products/admin.py">
+    <entry file="file://$PROJECT_DIR$/../CSEfest2019/picture_puzzle/core/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+        <state>
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/db/backends/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/management/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="372" column="35" selection-start-line="372" selection-start-column="35" selection-end-line="372" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templates/homepage_section_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templates/homepage_section_3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="63" column="14" lean-forward="true" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templates/product_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="50" column="85" selection-start-line="50" selection-start-column="85" selection-end-line="50" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templates/userlogin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templates/advanced_search_dynamic_part.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templates/homepage_js.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templatetags/homepage_extras.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/products/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+        <state relative-caret-position="1704">
+          <caret line="74" column="84" selection-start-line="74" selection-start-column="84" selection-end-line="74" selection-end-column="84" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templates/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templates/homepage_footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templates/homepage_section_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="33" column="54" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templates/advanced_search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="78" column="19" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/static/homepage/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="1222" column="21" selection-start-line="1222" selection-start-column="21" selection-end-line="1222" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templates/homepage_css.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templates/homepage_header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+          <folding>
+            <element signature="e#913#948#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/templates/homepage_navigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="53" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/static/homepage/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>

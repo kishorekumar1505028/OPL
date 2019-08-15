@@ -7,67 +7,63 @@
 
 
 <body>
-<!-- HEADER -->
-{% include 'homepage_header.html' %}
+    <!-- HEADER -->
+    {% include 'homepage_header.html' %}
 
-<!-- NAVIGATION -->
-{% include 'homepage_navigation.html' %}
-<!-- /NAVIGATION -->
+    <!-- NAVIGATION -->
+    {% include 'homepage_navigation.html' %}
+    <!-- /NAVIGATION -->
 
-<!-- BREADCRUMB -->
-<div id="breadcrumb">
-    <div class="container">
-        <ul class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li class="active">Products</li>
-        </ul>
+    <!-- BREADCRUMB -->
+    <div id="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Products</li>
+            </ul>
+        </div>
     </div>
-</div>
-<!-- /BREADCRUMB -->
+    <!-- /BREADCRUMB -->
 
-<!-- section -->
-<div class="section">
-    <!-- container -->
-    <div class="container">
-        <!-- row -->
-        <div class="row">
-            <!-- ASIDE -->
-            <form class="" action="{% url 'advanced_search' %}" method="get">
+    <!-- section -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
 
+                <!-- ASIDE -->
                 <div id="aside" class="col-md-3">
-                    <!-- aside widget -->
-
 
                     <!-- aside widget -->
+                    <div class="aside">
+                        <h3 class="aside-title">Shop by:</h3>
+
+                        <!-- the following ul class will be in a loop, contents will be changed dynamically -->
+                        <ul class="filter-list">
+                            <li><span class="text-uppercase">color:</span></li>
+                        </ul>
+                        <button class="primary-btn" id="clear-tags">Clear All</button>
+
+                    </div>
+
+                    <!-- aside widget -->
+                    <!-- price slider -->
                     <div class="aside">
                         <h3 class="aside-title">Filter by Price</h3>
-                        <div class="input-field">
-                            <h6 class="title"> Min</h6>  <input id="price-filter" name="min-price-filter"
-                                                                      type="text"> <br> <br>
-                        </div>
-                        <div class="input-field">
-                            <h6 class="title"> Max</h6>  <input id="price-filter" name="max-price-filter"
-                                                                      type="text">
-                        </div>
+                        <div id="price-slider"></div>
                     </div>
                     <!-- aside widget -->
-
-                    <!-- aside widget -->
+                    <!--the following div class will be in a loop , insert_tag will be changed dynamically -->
                     <div class="aside">
-                        <h3 class="aside-title">Filter by Location</h3>
-                        <div class="input-field">
-                            <h6 class="title">Distance</h6>  <input id="location-filter" name="location-filter"
-                                                                      type="text"> <b> km </b> <br> <br>
-                        </div>
+
+                        <h3 class="aside-title">Filter by _insert_tag </h3>
+                        <ul class="list-links">
+                            <li><a href="#">foo</a></li>
+                        </ul>
 
                     </div>
                     <!-- aside widget -->
-
-
-                    <!-- /aside widget -->
-
-                    <!-- /aside widget -->
-
                 </div>
                 <!-- /ASIDE -->
 
@@ -78,34 +74,33 @@
 
                         <div class="pull-left">
                             <div class="row-filter">
-                                <a href="#"><i class="fa fa-th-large"></i></a>
-                                <a href="#" class="active"><i class="fa fa-bars"></i></a>
+                                <button class="view-button" onclick="listView()"><i class="fa fa-bars"></i>
+                                    List
+                                </button>
+                                <button class="view-button view-active" onclick="gridView()"><i
+                                        class="fa fa-th-large"></i>
+                                    Grid
+                                </button>
                             </div>
-
                             <div class="sort-filter">
-
                                 <span class="text-uppercase">Sort By:</span>
-                                <select class="input" id="id_sort" name="id_sort">
-                                    <option value=0>Position</option>
-                                    <option value=1>Price</option>
-                                    <option value=2>Rating</option>
+                                <select class="input">
+                                    <option value="0">Position</option>
+                                    <option value="0">Price</option>
+                                    <option value="0">Rating</option>
                                 </select>
-
+                                <a href="#" class="main-btn icon-btn"><i class="fa fa-arrow-down"></i></a>
                             </div>
-                            <button id="submit">Submit </button>
-
-
                         </div>
+
                         <div class="pull-right">
                             <div class="page-filter">
                                 <span class="text-uppercase">Show:</span>
-
-                                <select class="input" id="n_products" name="n_products">
-                                    <option value="10">10</option>
-                                    <option value="20">20</option>
-                                    <option value="30">30</option>
+                                <select class="input">
+                                    <option value="0">10</option>
+                                    <option value="1">20</option>
+                                    <option value="2">30</option>
                                 </select>
-
                             </div>
                             <ul class="store-pages">
                                 <li><span class="text-uppercase">Page:</span></li>
@@ -116,8 +111,8 @@
                             </ul>
                         </div>
 
-
                     </div>
+
                     <!-- /store top filter -->
 
                     <!-- STORE -->
@@ -127,51 +122,54 @@
                             <!-- Product Single -->
                             {% for product in products_list %}
 
-                                {% if forloop.counter <= products_one_page|getval %}
-                                    <div class="col-md-4 col-sm-6 col-xs-6">
-                                        <div class="product product-single">
-                                            <div class="product-thumb">
-                                                {% if product.image %}
-                                                    <img src="{{ product.image.url }}" alt="">
-                                                {% endif %}
-                                            </div>
-                                            <div class="product-body">
-                                                <h3 class="product-price">{{ product.price }}</h3>
-                                                <div class="product-rating">
-                                                    {% for i in product.rating|getrange:0 %}
-                                                        <i class="fa fa-star"></i>
-                                                    {% endfor %}
+                            {% if forloop.counter <= products_one_page|getval %}
+                            <div class=" dummy2 col-md-4 col-sm-6 col-xs-6">
+                                <div class="product product-single">
+                                    <div class="product-thumb">
+                                        {% if product.image %}
+                                        <img src="{{ product.image.url }}" alt="" style="width: 250px; height: 250px;">
+                                        {% endif %}
+                                    </div>
+                                    <div class="product-body">
+                                        <h3 class="product-price">{{ product.price }}</h3>
+                                        <div class="product-rating">
+                                            {% for i in product.rating|getrange:0 %}
+                                            <i class="fa fa-star"></i>
+                                            {% endfor %}
 
-                                                    {% for i in product.rating|getrange:5 %}
-                                                        <i class="fa fa-star-o empty"></i>
-                                                    {% endfor %}
+                                            {% for i in product.rating|getrange:5 %}
+                                            <i class="fa fa-star-o empty"></i>
+                                            {% endfor %}
 
-                                                </div>
-                                                <h2 class="product-name"><a href="#">{{ product.productname }}</a></h2>
-                                                <div class="product-btns">
-                                                    <button class="main-btn icon-btn"><i class="fa fa-heart"></i>
-                                                    </button>
-                                                    <button class="main-btn icon-btn"><i class="fa fa-exchange"></i>
-                                                    </button>
-                                                    <button class="primary-btn add-to-cart"><i
-                                                            class="fa fa-shopping-cart"></i>
-                                                        Add to
-                                                        Cart
-                                                    </button>
-                                                </div>
-                                            </div>
+                                        </div>
+                                        <h2 class="product-name"><a href="#">{{ product.name }}</a></h2>
+                                        <div class="product-btns">
+                                            <button class="main-btn icon-btn"><i class="fa fa-heart"></i>
+                                            </button>
+                                            <button class="main-btn icon-btn"><i class="fa fa-exchange"></i>
+                                            </button>
+                                            <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i>
+                                                Add to
+                                                Cart
+                                            </button>
                                         </div>
                                     </div>
-                                    <!-- /Product Single -->
-                                {% endif %}
+                                </div>
+                            </div>
+                            <!-- /Product Single -->
+                            {% endif %}
                             {% endfor %}
                         </div>
                         <!-- /row -->
                     </div>
                     <!-- /STORE -->
                     <div class="row-filter">
-                        <a href="#"><i class="fa fa-th-large"></i></a>
-                        <a href="#" class="active"><i class="fa fa-bars"></i></a>
+                        <button class="view-button" onclick="listView()"><i class="fa fa-bars"></i>
+                            List
+                        </button>
+                        <button class="view-button view-active" onclick="gridView()"><i class="fa fa-th-large"></i>
+                            Grid
+                        </button>
                     </div>
                     <div class="sort-filter">
                         <span class="text-uppercase">Sort By:</span>
@@ -202,22 +200,20 @@
                     </ul>
                 </div>
 
-            </form>
-
+            </div>
+            <!-- /store bottom filter -->
         </div>
-        <!-- /store bottom filter -->
+        <!-- /MAIN -->
     </div>
-    <!-- /MAIN -->
-</div>
-<!-- /row -->
-</div>
-<!-- /container -->
-</div>
-<!-- /section -->
+    <!-- /row -->
+    </div>
+    <!-- /container -->
+    </div>
+    <!-- /section -->
 
-{% include 'homepage_footer.html' %}
+    {% include 'homepage_footer.html' %}
 
-{% include 'homepage_js.html' %}
+    {% include 'homepage_js.html' %}
 
 
 </body>

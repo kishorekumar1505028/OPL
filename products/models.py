@@ -5,15 +5,15 @@ from django.dispatch import receiver
 
 
 class Profile(models.Model):
+    """Profile of user """
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=20)  # Field name made lowercase.
-    address = models.CharField(max_length=45)  # Field name made lowercase.
-    birth_year = models.DateField()  # Field name made lowercase.
-    mobile_number = models.CharField(unique=True, max_length=45, blank=True,
-                                     null=True)  # Field name madeowercase.
-    email = models.CharField(unique=True, max_length=45)  # Field name made lowercase.
-    profession = models.CharField(max_length=45, blank=True, null=True)  # Field namemade lowercase.
-    bkash_account_no = models.CharField(max_length=45)  # Field renamed to remove unsuitable characters.
+    address = models.CharField(max_length=45)
+    birth_year = models.DateField()
+    profession = models.CharField(max_length=45, blank=True, null=True)
+    mobile_number = models.CharField(unique=True, max_length=11, blank=True, null=True)
+    bkash_account_no = models.CharField(max_length=45)
+    image = models.ImageField(blank=True, null=True, upload_to='img')
 
     def __str__(self):
         return self.user.username
@@ -25,65 +25,95 @@ class Profile(models.Model):
 # update profile on change in User
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):
+    """profile update function """
     if created:
         Profile.objects.create(user=instance)
     instance.profile.save()
 
 
+class TopCategory(models.Model):
+    topCategory = models.CharField(max_length=45)
+
+    class Meta:
+        db_table = 'top_category'
+
+
+class SuperCategory(models.Model):
+    superCategory = models.CharField(max_length=45)
+
+    class Meta:
+        db_table = 'super_category'
+
+
+class TopSuper(models.Model):
+    topCategory = models.ForeignKey(TopCategory, on_delete=models.CASCADE)
+    superCategory = models.ForeignKey(SuperCategory, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'top_super'
+
+
+class CategoryTag(models.Model):
+    category = models.CharField(max_length=45, default="others")
+    tag = models.CharField(max_length=450, default="empty")
+    superCategory = models.ForeignKey(SuperCategory, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'category_tag'
+
+
 class Product(models.Model):
-    name = models.CharField(max_length=45)  # Field name made lowercase.
-    price = models.FloatField()  # Field name made lowercase.
-    category = models.CharField(default='others' , max_length=45)
+    """Product refers to the products of the site"""
+
+    name = models.CharField(max_length=1000)
+    description = models.CharField(max_length=1000)
+    quantity = models.IntegerField(default='0')
+    old_price = models.FloatField(default='0')
+    price = models.FloatField(default='0')
+    discount = models.FloatField(default='0')
     rating = models.IntegerField(default='0')
-    image = models.ImageField(max_length=100, blank=True, null=True, upload_to='img')
+    image = models.ImageField(max_length=1000, blank=True, null=True, upload_to='img')
+    category = models.ForeignKey(CategoryTag, on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'product'
 
 
+class ProductReview(models.Model):
+    """Review of product"""
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    review = models.CharField(max_length=2000)
+
+    class Meta:
+        db_table = 'product_review'
+
+
 class Cart(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    """ Cart class refers to the cart of the user"""
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField()
 
     class Meta:
         db_table = 'cart'
 
 
-class CartProducts(models.Model):
-    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    quantity = models.PositiveIntegerField()
+class WishList(models.Model):
+    """ WishList class refers to the products user wishes to purchase"""
 
-    class Meta:
-        db_table = 'cart_products'
-
-
-class ProductDiscount(models.Model):
-    product = models.OneToOneField(Product, on_delete=models.CASCADE)
-    percentage = models.FloatField(default=0)
-
-    class Meta:
-        db_table = 'discount'
-
-
-class UserDiscount(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    discount = models.ForeignKey(ProductDiscount, on_delete=models.CASCADE)
-    shop = models.ForeignKey('Shop', models.DO_NOTHING)
-
-    class Meta:
-        db_table = 'discount_for_user'
-
-
-class Payment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    amount = models.FloatField()
 
     class Meta:
-        db_table = 'payment'
+        db_table = 'wish_list'
 
 
 class Shop(models.Model):
+    """ Shop class refers to the shops of the site"""
+
     name = models.CharField(max_length=45)
     location = models.CharField(max_length=45)
 
@@ -92,19 +122,23 @@ class Shop(models.Model):
 
 
 class ShopProduct(models.Model):
+    """ ShopProduct class refers to the products of the shop"""
+
     shop = models.ForeignKey(Shop, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=0)
 
     class Meta:
-        db_table = 'shop_storage'
+        db_table = 'shop_product'
 
 
 class PurchaseLog(models.Model):
+    """ PurchaseLog class refers to the time and product of the user's purchase"""
+
     time = models.DateTimeField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    shop = models.ForeignKey(Shop, on_delete=models.CASCADE)
+    amount = models.FloatField(default=0)
 
     class Meta:
         db_table = 'purchase_log'

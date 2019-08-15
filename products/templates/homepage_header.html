@@ -28,7 +28,7 @@
                 <!-- Logo -->
                 <div class="header-logo">
                     <a class="logo" href="#">
-                        <img src="/media/img/mylogo.png" align="middle">
+                        <img id = "img_logo" src="/media/img/mylogo.png" style=" width: 80px; height: 80px;">
                     </a>
                 </div>
                 <!-- /Logo -->
@@ -40,12 +40,6 @@
                         <select class="input search-categories">
 
                             {% for i in products_list|getcategory:"All Categories" %}
-                                <option value="{{forloop.counter}}"> {{i}} </option>
-                            {% endfor %}
-
-                        </select>
-                        <select class="input search-locations">
-                        {% for i in shops_list|getcategory:"Any Location" %}
                                 <option value="{{forloop.counter}}"> {{i}} </option>
                             {% endfor %}
 
@@ -66,7 +60,7 @@
                             </div>
                             <strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
                         </div>
-                        <a href="{% url 'user_login' %}" class="text-uppercase">Sign in</a> / <a href="" class="text-uppercase">Sign up</a>
+                        <a href="{% url 'login_user' %}" class="text-uppercase">Sign in</a> / <a href="{% url 'logout_user' %}" class="text-uppercase">Sign out</a>
                         <ul class="custom-menu">
                             <li><a href="#"><i class="fa fa-user-o"></i> My Profile</a></li>
                             <li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
