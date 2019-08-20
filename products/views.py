@@ -1,7 +1,9 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+from django.core import serializers
+from django.forms import model_to_dict
+from django.http import HttpResponse, JsonResponse
 from .models import Product
-from .models import Shop
+from .models import Shop, TopCategory, TopSuper, CategoryTag, SuperCategory
 from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
@@ -19,56 +21,77 @@ n_of_products_one_page = 10
 sort_by_products = 0
 
 
+def categoryview(request):
+    topcat = TopCategory.objects.all()
+    topsuper = TopSuper.objects.all()
+    cattag = CategoryTag.objects.all()
+    supercat = SuperCategory.objects.all()
+
+    top_category_list = []
+
+    for i in topcat:
+        tempsuper = topsuper.filter(topCategory_id=i.id)
+
+        print("\n i's id (top category id) ")
+        print(i.id)
+        print(i.topCategory)
+        print(" printing super category list")
+        print(tempsuper)
+
+        super_category_list = []
+
+        for j in tempsuper:
+
+            print("\nj's id ")
+            print(j.id)
+            print(" printing super category id ")
+            print(j.superCategory)
+
+            super_category_object = supercat.filter(id=j.superCategory_id)
+            category_list = (cattag.filter(superCategory_id=j.superCategory_id))
+
+            for oj in super_category_object:
+                super_category_name = oj.superCategory
+            category_name_list = []
+            for oj in category_list:
+                category_name_list.append(oj.category)
+
+            super_category_dictionary = {
+                'super_category': super_category_name,
+                'category_list': category_name_list
+            }
+            super_category_list.append(super_category_dictionary)
+
+        top_category_dictionary = {
+            'top_category': i.topCategory,
+            'super_category_list': super_category_list
+        }
+
+        top_category_list.append(top_category_dictionary)
+        print("printing added dictionary")
+        print(top_category_dictionary)
+
+    print(top_category_list)
+    return render(request, 'homepage.html',
+                  {'products_list': products, 'top_category_list': top_category_list})
+
+
+def television_filter(taglist):
+    return 0
+
+
 def index(request):
     return render(request, 'index.html', {'products_list': products})
 
 
-
 def advanced_search(request):
-    sort_by = 0
-    n_products = 10
-    filter_price = "nothing"
-    min_filter_price = 0
-    max_filter_price = 10000
-    location_filter = 1
     if request.method == 'GET':
-        if request.GET.get('id_sort') is not None:
-            sort_by = int(request.GET.get('id_sort'))
-
-        if request.GET.get('n_products') is not None:
-            n_products = int(request.GET.get('n_products'))
-        print("checking")
-        p2 = request.GET.get('max-price-filter')
-        p1 = request.GET.get('min-price-filter')
-        p3 = request.GET.get('location-filter')
-        if p1 is not None and p1 != '':
-            print("invalid")
-            min_filter_price = int(p1, 10)
-
-        if p2 is not None and p2 != '':
-            max_filter_price = int(p2, 10)
-
-        if p3 is not None and p3 != '':
-            location_filter = int(p3, 10)
-
-        print("sort by :")
-        print(sort_by)
-        print(n_products)
-        print(filter_price)
-        print(location_filter)
-    trimmed_products = products
-    if sort_by == 2:
-        print("dhukse sort er vitor")
-        trimmed_products = trimmed_products.order_by('rating')
-    elif sort_by == 1:
-        trimmed_products = trimmed_products.order_by('price')
-    filtered_products = []
-    for p in trimmed_products:
-        if ((p.price >= min_filter_price) and (p.price <= max_filter_price)):
-            filtered_products.append(p)
-
-    return render(request, 'advanced_search.html',
-                  {'products_list': filtered_products, 'shops_list': shops, 'products_one_page': n_products, })
+        req_category = request.GET.get('category', None)
+        filtered_products = serializers.serialize('json', Product.objects.filter(category__category=req_category))
+        data = {
+            'product_list': filtered_products
+        }
+    return JsonResponse(data)
 
 
 def product_details(request, product_id):
@@ -82,6 +105,7 @@ def product_details(request, product_id):
 def initial_page(request):
     return render(request, 'homepage.html', {'products_list': products, 'shops_list': shops})
 
+
 def validate_user(request, username, email):
     try:
         user = User.objects.get(Q(username=username) | Q(email=email))
@@ -93,6 +117,7 @@ def validate_user(request, username, email):
         return True
     else:
         return False
+
 
 def login_user(request):
     if request.method == 'POST':

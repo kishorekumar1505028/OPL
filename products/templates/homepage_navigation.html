@@ -2,54 +2,105 @@
 
 
 {% block homepage_navigation %}
+    <!-- NAVIGATION -->
     <div id="navigation">
         <!-- container -->
-        <div class="container">
+        <div id="responsive-nav">
             <!-- category nav -->
-            <div class="category-nav">
-                <span class="category-header">Categories <i class="fa fa-list"></i></span>
+            <div class="category-nav show-on-click">
+                <span class="category-header">Categories<i class="fa fa-list"></i></span>
                 <ul class="category-list">
 
-                    <li class="dropdown side-dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Women <i
-                                class="fa fa-angle-right"></i></a>
-                        <div class="custom-menu">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <ul class="list-links">
-                                        <li>
-                                            <h3 class="list-links-title">Clothing</h3></li>
-                                        <li><a href="#">Saree</a></li>
-                                        <li><a href="#">Salwar</a></li>
-                                    </ul>
-                                    <hr class="hidden-md hidden-lg">
+                    {% for top_category_dictionary in top_category_list %}
+
+                        <li class="dropdown side-dropdown">
+
+
+                            <a class="dropdown-toggle" data-toggle="dropdown"
+                               aria-expanded="true"> {{ top_category_dictionary.top_category }}<i
+                                    class="fa fa-angle-right"></i></a>
+
+                            <div class="custom-menu">
+                                <div class="row">
+
+                                    {% for super_category_dictionary in top_category_dictionary.super_category_list %}
+
+                                        <div class="col-md-4">
+                                            <ul class="list-links">
+
+                                                <li>
+                                                    <h3 class="list-links-title">{{ super_category_dictionary.super_category }} </h3>
+                                                </li>
+
+
+                                                {% for categorys in super_category_dictionary.category_list %}
+                                                    <li class = "cat_name">
+                                                        <a>{{ categorys }}</a>
+                                                    </li>
+                                                {% endfor %}
+
+                                            </ul>
+                                            <hr class="hidden-md hidden-lg">
+                                        </div>
+
+                                    {% endfor %}
+
                                 </div>
-
                             </div>
-                        </div>
-                    </li>
 
+                        </li>
+
+                    {% endfor %}
 
                 </ul>
             </div>
             <!-- /category nav -->
 
-            <div id="responsive-nav">
+            <!-- menu nav -->
+            <div class="menu-nav">
+                <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
+                <ul class="menu-list">
+                    <li><a href={% url 'initial_page' %}>Home</a></li>
+                    {% for top_category_dictionary in top_category_list %}
 
-                <!-- menu nav -->
-                <div class="menu-nav">
-                    <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
-                    <ul class="menu-list">
-                        <li><a href={% url 'initial_page' %}>Home</a></li>
-                        {% for i in products_list|getcategory:"All Categories" %}
-                            <li><a href="#">{{ i }}</a></li>
+                        <li class="dropdown mega-dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
+                               aria-expanded="true">{{ top_category_dictionary.top_category }}</a>
+                            <div class="custom-menu">
+                                <div class="row">
 
-                        {% endfor %}
-                    </ul>
-                </div>
-                <!-- menu nav -->
+                                    {% for super_category_dictionary in top_category_dictionary.super_category_list %}
+
+                                        <div class="col-md-4">
+                                            <ul class="list-links">
+
+                                                <li>
+                                                    <h3 class="list-links-title">{{ super_category_dictionary.super_category }} </h3>
+                                                </li>
+
+
+                                                {% for categorys in super_category_dictionary.category_list %}
+                                                    <li class = "cat_name">
+                                                        <a>{{ categorys }}</a>
+                                                    </li>
+                                                {% endfor %}
+
+                                            </ul>
+                                            <hr class="hidden-md hidden-lg">
+                                        </div>
+
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+
+                        </li>
+
+                    {% endfor %}
+                </ul>
             </div>
+            <!-- menu nav -->
         </div>
-        <!-- /container -->
+    </div>
+    <!-- /container -->
     </div>
 {% endblock %}

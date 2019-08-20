@@ -355,22 +355,17 @@ textarea.input {
 
 .header-search {
   display: inline-block;
-  padding: 15px 0px 0px 100px;
-  max-width: 800px;
+  padding: 15px 0px;
+  max-width: 400px;
 }
 
 .header-search>form {
   position: relative;
-  
-  
 }
 
 .header-search>form .search-input {
-  border: 1px solid #f48fb1;
-  box-shadow: 0 0 0 1px #f48fb1;
   padding-left: 150px;
   padding-right: 45px;
-  width: 500px;
 }
 
 .header-search>form .search-categories {
@@ -386,24 +381,8 @@ textarea.input {
   right: 0px;
   width: 40px;
   height: 40px;
-  border: 1px solid #cddc39;
-  
-
-}
-.header-search>form .search-categories:hover {
-  background-color: midnightblue;
-  color: #FFF;
-  text-decoration-color: #FFF;
-
-}
-.header-search>form .search-categories.dropdown .custom-menu>li>a>i {
-  margin-right: 15px;
-  color: #F8694A;
-}
-
-.header-search>form .search-btn:hover {
-  background-color: midnightblue;
-
+  background-color: transparent;
+  border: none;
 }
 
 /*----------------------------*\
@@ -413,7 +392,7 @@ textarea.input {
 .header-btns>li {
   display: inline-block;
   vertical-align: top;
-  padding: 25px 0px;
+  padding: 15px 0px;
 }
 
 .header-btns>li+li {

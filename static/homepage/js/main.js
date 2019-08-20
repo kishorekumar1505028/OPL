@@ -152,11 +152,11 @@
   //extracting min and max val from slider
   slider.noUiSlider.on('change', function () {
     alert("hi all");
-    var vals = slider.noUiSlider.get() ;
-    var minval= Number(vals[0].slice (0 , vals[0].length-1));
-    var maxval= Number(vals[1].slice (0 , vals[1].length-1));
+    var vals = slider.noUiSlider.get();
+    var minval = Number(vals[0].slice(0, vals[0].length - 1));
+    var maxval = Number(vals[1].slice(0, vals[1].length - 1));
 
-    console.log(typeof(minval) + minval+ typeof(maxval) + maxval) ;
+    console.log(typeof (minval) + minval + typeof (maxval) + maxval);
   });
 
 
@@ -202,7 +202,7 @@ function gridView() {
 var container = document.getElementById("row-filter");
 var btns = document.getElementsByClassName("view-button");
 for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
+  btns[i].addEventListener("click", function () {
     var current = document.getElementsByClassName("view-active");
     console.log(current);
     current[0].className = current[0].className.replace(" view-active", "");
