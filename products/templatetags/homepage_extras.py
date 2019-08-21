@@ -4,6 +4,7 @@ register = template.Library()
 
 foo = 0
 
+
 @register.filter(name='getrange')
 def getrange(value, arg):
     if arg == 0:
@@ -11,21 +12,26 @@ def getrange(value, arg):
     else:
         return range(arg - value)
 
+
 @register.filter(name='getval')
-def getval (value):
-    return int (value)
+def getval(value):
+    return int(value)
+
 
 @register.filter(name='getfoo')
-def getfoo (val):
+def getfoo(val):
     return val
+
+
 @register.filter(name='setfoo')
-def setfoo (val):
+def setfoo(val):
     foo = 2
     print("foo : ")
     print(foo)
 
+
 @register.filter(name='getcategory')
-def getcategory(item_list , arg):
+def getcategory(item_list, arg):
     category_list = [arg]
 
     if item_list is None:
@@ -33,7 +39,7 @@ def getcategory(item_list , arg):
 
     for i in item_list:
         set_category_list = set(category_list)
-        if arg == "All Categories" :
+        if arg == "All Categories":
             if i.category in set_category_list:
                 pass
             else:

@@ -13,33 +13,32 @@
     console.log(typeof (menuToggle));
     console.log(typeof (menuList));
     catToggle.on('click', function () {
-    menuList.removeClass('open');
-    catList.toggleClass('open');
-  });
+        menuList.removeClass('open');
+        catList.toggleClass('open');
+    });
 
-  menuToggle.on('click', function () {
-    catList.removeClass('open');
-    menuList.toggleClass('open');
-  });
+    menuToggle.on('click', function () {
+        catList.removeClass('open');
+        menuList.toggleClass('open');
+    });
 
 
-  $(document).click(function (event) {
-    if (!$(event.target).closest(responsiveNav).length) {
-      if (responsiveNav.hasClass('open')) {
-        responsiveNav.removeClass('open');
-        $('#navigation').removeClass('shadow');
-      } else {
-        if ($(event.target).closest('.nav-toggle > button').length) {
-          if (!menuList.hasClass('open') && !catList.hasClass('open')) {
-            menuList.addClass('open');
-          }
-          $('#navigation').addClass('shadow');
-          responsiveNav.addClass('open');
+    $(document).click(function (event) {
+        if (!$(event.target).closest(responsiveNav).length) {
+            if (responsiveNav.hasClass('open')) {
+                responsiveNav.removeClass('open');
+                $('#navigation').removeClass('shadow');
+            } else {
+                if ($(event.target).closest('.nav-toggle > button').length) {
+                    if (!menuList.hasClass('open') && !catList.hasClass('open')) {
+                        menuList.addClass('open');
+                    }
+                    $('#navigation').addClass('shadow');
+                    responsiveNav.addClass('open');
+                }
+            }
         }
-      }
-    }
-  });
-
+    });
 
 
     // HOME SLICK
@@ -51,33 +50,37 @@
     });
 
     // PRODUCTS SLICK
-    $('#product-slick-1').slick({
-        slidesToShow: 3,
-        slidesToScroll: 2,
-        autoplay: true,
-        infinite: true,
-        speed: 300,
-        dots: true,
-        arrows: false,
-        appendDots: '.product-slick-dots-1',
-        responsive: [{
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-            }
-        },
-            {
-                breakpoint: 480,
+    function get_product_slick_settings() {
+        return {
+            slidesToShow: 3,
+            slidesToScroll: 2,
+            autoplay: true,
+            infinite: true,
+            speed: 300,
+            dots: true,
+            arrows: false,
+            appendDots: '.product-slick-dots-1',
+            responsive: [{
+                breakpoint: 991,
                 settings: {
-                    dots: false,
-                    arrows: true,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 }
             },
-        ]
-    });
+                {
+                    breakpoint: 480,
+                    settings: {
+                        dots: false,
+                        arrows: true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                },
+            ]
+        }
+    }
+
+    $('#product-slick-1').slick(get_product_slick_settings());
 
     $('#product-slick-2').slick({
         slidesToShow: 3,
@@ -159,8 +162,8 @@
 
             console.log(typeof (minval) + minval + typeof (maxval) + maxval);
         });
-    }
 
+    }
 
 })(jQuery);
 
@@ -224,30 +227,4 @@ if (btns) {
 }
 
 
-
-$(".cat_name").click(function () {
-    var cat_name = ($(this).text()).trim().toLowerCase()
-
-    $.ajax({
-        url: 'ajax/advanced_search/',
-        data: {
-          'category': cat_name
-        },
-        dataType: 'json',
-        success: function (data) {
-          if (data) {
-           /* var deserialized_data = JSON.parse(data);
-            alert(deserialized_data);
-
-            for (var i = 0 ; i < deserialized_data.length ; i++)
-                console.log("deserialized data :" + (deserialized_data[i]));
-                */
-              console.log($('.new-product-list').text()) ;
-
-
-          }
-        }
-      });
-
-});
 

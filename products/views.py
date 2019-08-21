@@ -1,32 +1,29 @@
+from django.contrib import messages
+from django.contrib.auth import login
+from django.contrib.auth import logout, authenticate
 from django.contrib.auth.decorators import login_required
-from django.core import serializers
-from django.forms import model_to_dict
-from django.http import HttpResponse, JsonResponse
+from django.contrib.auth.models import User
+from django.db.models import Q
+from django.http import JsonResponse
+from django.shortcuts import render, redirect
+from django.template.loader import render_to_string
+
 from .models import Product
 from .models import Shop, TopCategory, TopSuper, CategoryTag, SuperCategory
-from django.db.models import Q
-from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
-from django.contrib import messages
-from django.contrib.auth import login, logout, authenticate
-from .models import ShopProduct
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login
-from django.urls import reverse
 
 # Create your views here.
 products = Product.objects.all()
 shops = Shop.objects.all()
+topcat = TopCategory.objects.all()
+topsuper = TopSuper.objects.all()
+cattag = CategoryTag.objects.all()
+supercat = SuperCategory.objects.all()
+
 n_of_products_one_page = 10
 sort_by_products = 0
 
 
-def categoryview(request):
-    topcat = TopCategory.objects.all()
-    topsuper = TopSuper.objects.all()
-    cattag = CategoryTag.objects.all()
-    supercat = SuperCategory.objects.all()
-
+def categoryview():
     top_category_list = []
 
     for i in topcat:
@@ -43,9 +40,9 @@ def categoryview(request):
         for j in tempsuper:
 
             print("\nj's id ")
-            print(j.id)
+            # print(j.id)
             print(" printing super category id ")
-            print(j.superCategory)
+            # print(j.superCategory)
 
             super_category_object = supercat.filter(id=j.superCategory_id)
             category_list = (cattag.filter(superCategory_id=j.superCategory_id))
@@ -68,30 +65,45 @@ def categoryview(request):
         }
 
         top_category_list.append(top_category_dictionary)
-        print("printing added dictionary")
-        print(top_category_dictionary)
+        # print("printing added dictionary")
+        # print(top_category_dictionary)
 
-    print(top_category_list)
-    return render(request, 'homepage.html',
-                  {'products_list': products, 'top_category_list': top_category_list})
-
-
-def television_filter(taglist):
-    return 0
+    # print(top_category_list)
+    return top_category_list
 
 
-def index(request):
-    return render(request, 'index.html', {'products_list': products})
+def homepage_view(request):
+    ctx = {'products_list': products, 'category_list': cattag, 'top_category_list': categoryview()}
+    return render(request, "homepage.html", context=ctx)
 
 
-def advanced_search(request):
-    if request.method == 'GET':
-        req_category = request.GET.get('category', None)
-        filtered_products = serializers.serialize('json', Product.objects.filter(category__category=req_category))
-        data = {
-            'product_list': filtered_products
-        }
-    return JsonResponse(data)
+def advanced_search_ajax (request):
+    if request.is_ajax():
+        if request.method == 'GET':
+            req_category = request.GET.get('category', None)
+            filtered_products = Product.objects.filter(category__category=req_category)
+
+            html = render_to_string(
+                template_name="category_page_product_info.html",
+                context={'products_list': filtered_products}
+            )
+
+            data_dict = {"html_from_view": html}
+
+            return JsonResponse(data=data_dict, safe=False)
+
+
+def advanced_search(request, category):
+
+    if category:
+        filtered_products = Product.objects.filter(category__category=category).reverse()
+    else:
+        filtered_products = products
+    print("printing products: ")
+    print(filtered_products)
+    ctx = {'products_list': filtered_products, 'top_category_list': categoryview()}
+
+    return render(request, "advanced_search.html", context=ctx)
 
 
 def product_details(request, product_id):
@@ -100,10 +112,6 @@ def product_details(request, product_id):
             return render(request, 'product_details.html', {'product_details': product,
                                                             'products_list': products,
                                                             'shops_list': shops})
-
-
-def initial_page(request):
-    return render(request, 'homepage.html', {'products_list': products, 'shops_list': shops})
 
 
 def validate_user(request, username, email):
