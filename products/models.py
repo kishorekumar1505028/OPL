@@ -9,7 +9,6 @@ class Profile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     address = models.CharField(max_length=45)
-    birth_year = models.DateField()
     profession = models.CharField(max_length=45, blank=True, null=True)
     mobile_number = models.CharField(unique=True, max_length=11, blank=True, null=True)
     bkash_account_no = models.CharField(max_length=45)

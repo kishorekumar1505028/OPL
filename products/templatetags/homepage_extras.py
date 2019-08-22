@@ -5,6 +5,19 @@ register = template.Library()
 foo = 0
 
 
+@register.filter(name='get_min_max')
+def get_min_max(item_list):
+    min_val = 999999999
+    max_val = 0
+    for i in item_list:
+        pval = float(i.price)
+        if pval < min_val:
+            min_val = pval
+        if pval > max_val:
+            max_val = pval
+    return {int(min_val),int(max_val)}
+
+
 @register.filter(name='getrange')
 def getrange(value, arg):
     if arg == 0:

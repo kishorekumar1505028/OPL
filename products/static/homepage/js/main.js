@@ -2,11 +2,25 @@
     "use strict";
 
     // NAVIGATION
+    var slider;
+    var minMax;
+    var showNumber;
+    var sortBy;
+    var productMinval;
+    var productMaxval;
+    var productMinvalstr;
+    var productMaxvalstr;
+    var reverseList = false;
+
     var responsiveNav = $('#responsive-nav'),
         catToggle = $('#responsive-nav .category-nav .category-header'),
         catList = $('#responsive-nav .category-nav .category-list'),
         menuToggle = $('#responsive-nav .menu-nav .menu-header'),
         menuList = $('#responsive-nav .menu-nav .menu-list');
+    var sliderMaxval;
+    var sliderMinval;
+    var sliderVals;
+
     console.log(typeof (responsiveNav));
     console.log(typeof (catToggle));
     console.log(typeof (catList));
@@ -132,11 +146,28 @@
     // PRODUCT ZOOM
     $('#product-main-view .product-view').zoom();
 
-    // PRICE SLIDER
-    var slider = document.getElementById('price-slider');
+
+    //price slider
+    slider = document.getElementById('price-slider');
+
+    //min price and max_price
+    minMax = document.getElementById('min_max_val').textContent;
+
+    //sort_option
+    sortBy = $('#sort_by option:selected').text();
+
+    showNumber = $('#show_number option:selected').text();
+
+    productMaxvalstr = minMax.slice(1, minMax.search(","));
+    productMinvalstr = minMax.slice(minMax.search(",") + 2, minMax.length - 1);
+    productMaxval = parseInt(productMaxvalstr);
+    productMinval = parseInt(productMinvalstr);
+    sliderMinval = productMinval
+    sliderMaxval = productMaxval
+
     if (slider) {
         noUiSlider.create(slider, {
-            start: [1, 999],
+            start: [productMinvalstr, productMaxvalstr],
             connect: true,
             tooltips: [true, true],
             format: {
@@ -148,22 +179,61 @@
                 }
             },
             range: {
-                'min': 1,
-                'max': 999
+                'min': productMinval,
+                'max': productMaxval
             }
         });
         //extracting min and max val from slider
         slider.noUiSlider.on('change', function () {
-            alert("hi all");
+            sliderVals = slider.noUiSlider.get();
+            sliderMinval = Number(sliderVals[0].slice(0, sliderVals[0].length - 1));
+            sliderMaxval = Number(sliderVals[1].slice(0, sliderVals[1].length - 1));
 
-            var vals = slider.noUiSlider.get();
-            var minval = Number(vals[0].slice(0, vals[0].length - 1));
-            var maxval = Number(vals[1].slice(0, vals[1].length - 1));
 
-            console.log(typeof (minval) + minval + typeof (maxval) + maxval);
         });
 
     }
+
+    $('#show_number').on('change', function (){
+        showNumber = $('#show_number option:selected').text();
+    });
+
+    $('#sort_by').on('change', function (){
+        sortBy = $('#sort_by option:selected').text();
+    });
+    function do_ajax(doreverse) {
+        $.ajax({
+                url: 'ajax/price_filter/',
+                type: 'POST',
+                data: {
+                    'minval': sliderMinval,
+                    'maxval' : sliderMaxval,
+                    'sortby' : sortBy,
+                    'shownumber': showNumber,
+                    'reverselist' : doreverse
+
+                },
+                dataType: 'json',
+                success: function (data) {
+                    if (data) {
+                        console.log(data['html_from_view']);
+                        $('#ajax_filter').html(data['html_from_view']);
+
+                    }
+                }
+            });
+
+    }
+    $('#submit_btn').on('click', function (){
+        reverseList = false
+        do_ajax();
+    });
+
+    $('#sort-btn').on('click', function (){
+        reverseList = !reverseList
+        alert(reverseList)
+        do_ajax(reverseList);
+    });
 
 })(jQuery);
 

@@ -3,10 +3,12 @@ from django.contrib.auth import login
 from django.contrib.auth import logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.core import serializers
 from django.db.models import Q
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
+from django.views.decorators.csrf import csrf_exempt
 
 from .models import Product
 from .models import Shop, TopCategory, TopSuper, CategoryTag, SuperCategory
@@ -65,11 +67,16 @@ def categoryview():
         }
 
         top_category_list.append(top_category_dictionary)
-        # print("printing added dictionary")
-        # print(top_category_dictionary)
 
-    # print(top_category_list)
     return top_category_list
+
+
+def filter_by_category(category):
+    if category:
+        filtered_products = Product.objects.filter(category__category=category).order_by('name')
+    else:
+        filtered_products = products
+    return filtered_products
 
 
 def homepage_view(request):
@@ -77,11 +84,28 @@ def homepage_view(request):
     return render(request, "homepage.html", context=ctx)
 
 
-def advanced_search_ajax (request):
+@csrf_exempt
+def ajax_price_filter(request, category):
+    filtered_products = filter_by_category(category)
+
     if request.is_ajax():
-        if request.method == 'GET':
-            req_category = request.GET.get('category', None)
-            filtered_products = Product.objects.filter(category__category=req_category)
+        if request.method == 'POST':
+            minval = float(request.POST.get('minval', None))
+            maxval = float(request.POST.get('maxval', None))
+            sortby = request.POST.get('sortby', None).lower()
+            shownum = int(request.POST.get('shownumber', None))
+            reverselist = (request.POST.get('reverselist', None))
+            print("sort by and shownum")
+            print(sortby)
+            print(shownum)
+            print(reverselist)
+            filtered_products = filtered_products.filter(price__range=(minval, maxval)).order_by(sortby)
+            print("filtered products: ")
+            print(filtered_products)
+            if reverselist == 'true':
+                filtered_products = filtered_products.reverse()
+                print('reversed')
+                print(filtered_products)
 
             html = render_to_string(
                 template_name="category_page_product_info.html",
@@ -94,11 +118,7 @@ def advanced_search_ajax (request):
 
 
 def advanced_search(request, category):
-
-    if category:
-        filtered_products = Product.objects.filter(category__category=category).reverse()
-    else:
-        filtered_products = products
+    filtered_products = filter_by_category(category)
     print("printing products: ")
     print(filtered_products)
     ctx = {'products_list': filtered_products, 'top_category_list': categoryview()}
@@ -146,6 +166,10 @@ def login_user(request):
         return render(request, 'userlogin.html', {
             'view': 'login',
         })
+
+
+def register_user(request):
+    return render(request, 'userreg.html',{})
 
 
 @login_required
