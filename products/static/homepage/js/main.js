@@ -2,6 +2,7 @@
     "use strict";
 
     // NAVIGATION
+    var minMaxcontent;
     var slider;
     var minMax;
     var showNumber;
@@ -151,21 +152,26 @@
     slider = document.getElementById('price-slider');
 
     //min price and max_price
-    minMax = document.getElementById('min_max_val').textContent;
+    minMaxcontent = document.getElementById('min_max_val')
+    if (minMaxcontent)
+        minMax = minMaxcontent.textContent;
 
     //sort_option
-    sortBy = $('#sort_by option:selected').text();
+    if ($('#sort_by option:selected'))
+        sortBy = $('#sort_by option:selected').text();
 
-    showNumber = $('#show_number option:selected').text();
+    if ($('#show_number option:selected'))
+        showNumber = $('#show_number option:selected').text();
 
-    productMaxvalstr = minMax.slice(1, minMax.search(","));
-    productMinvalstr = minMax.slice(minMax.search(",") + 2, minMax.length - 1);
-    productMaxval = parseInt(productMaxvalstr);
-    productMinval = parseInt(productMinvalstr);
-    sliderMinval = productMinval
-    sliderMaxval = productMaxval
 
     if (slider) {
+        productMaxvalstr = minMax.slice(1, minMax.search(","));
+        productMinvalstr = minMax.slice(minMax.search(",") + 2, minMax.length - 1);
+        productMaxval = parseInt(productMaxvalstr);
+        productMinval = parseInt(productMinvalstr);
+        sliderMinval = productMinval
+        sliderMaxval = productMaxval
+
         noUiSlider.create(slider, {
             start: [productMinvalstr, productMaxvalstr],
             connect: true,
@@ -194,50 +200,98 @@
 
     }
 
-    $('#show_number').on('change', function (){
+    $('#show_number').on('change', function () {
         showNumber = $('#show_number option:selected').text();
     });
 
-    $('#sort_by').on('change', function (){
+    $('#sort_by').on('change', function () {
         sortBy = $('#sort_by option:selected').text();
     });
+
+
     function do_ajax(doreverse) {
         $.ajax({
-                url: 'ajax/price_filter/',
-                type: 'POST',
-                data: {
-                    'minval': sliderMinval,
-                    'maxval' : sliderMaxval,
-                    'sortby' : sortBy,
-                    'shownumber': showNumber,
-                    'reverselist' : doreverse
+            url: 'ajax/price_filter/',
+            type: 'POST',
+            data: {
+                'minval': sliderMinval,
+                'maxval': sliderMaxval,
+                'sortby': sortBy,
+                'shownumber': showNumber,
+                'reverselist': doreverse
 
-                },
-                dataType: 'json',
-                success: function (data) {
-                    if (data) {
-                        console.log(data['html_from_view']);
-                        $('#ajax_filter').html(data['html_from_view']);
+            },
+            dataType: 'json',
+            success: function (data) {
+                if (data) {
+                    console.log(data['html_from_view']);
+                    $('#ajax_filter').html(data['html_from_view']);
 
-                    }
                 }
-            });
+            }
+        });
 
     }
-    $('#submit_btn').on('click', function (){
+
+    $('#submit_btn').on('click', function () {
         reverseList = false
-        do_ajax();
+        do_ajax(reverseList);
     });
 
-    $('#sort-btn').on('click', function (){
+    $('#sort-btn').on('click', function () {
         reverseList = !reverseList
         alert(reverseList)
         do_ajax(reverseList);
     });
 
+
 })(jQuery);
 
 "use strict";
+
+function add_to_cart_ajax(id) {
+    $.ajax({
+        url: '.',
+        type: 'POST',
+        data: {
+            'act':'add_to_cart',
+            'product_id': id
+        },
+        dataType: 'json',
+        success: function (data) {
+            if (data) {
+                if (data['error_msg']) {
+                    console.log(data['error_msg']);
+                    alert(data['error_msg']);
+                }
+                else
+                {
+                    $('.shopping-cart-list').html(data['html_from_view']);
+                }
+
+            }
+        }
+    });
+
+}
+
+function update_qty_number(do_add) {
+
+    var qty = Number($('.qty').text());
+    if (do_add == true)
+        qty++;
+    else {
+        qty--;
+        qty = Math.max(0,qty);
+    }
+
+    $('.qty').text(qty);
+}
+
+function handle_add_to_cart(id) {
+    update_qty_number(true);
+    add_to_cart_ajax(id);
+}
 
 var elements = document.getElementsByClassName("dummy");
 var elements2 = document.getElementsByClassName("dummy2");

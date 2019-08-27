@@ -3,12 +3,17 @@
     {% load static %}
     <!-- HEADER -->
     <header>
+        {% if messages %}
+            {% include 'toast_messages.html' %}
+        {% endif %}
+
         <!-- top Header -->
         <div id="top-header">
             <div class="container">
                 <div class="pull-left">
-                    <span>Welcome to Online Product Locator!</span>
+                    <span>Welcome to Online Shopping!</span>
                 </div>
+
                 <div class="pull-right">
                     <ul class="header-top-links">
                         <li><a>Advanced Search</a></li>
@@ -84,9 +89,15 @@
                             </a>
                             <div class="custom-menu">
                                 <div id="shopping-cart">
+									<div class="shopping-cart-list">
+									{%include 'small_cart.html' %}
+									</div>
                                     <div class="shopping-cart-btns">
-                                        <button class="main-btn">View Cart</button>
-                                        <button class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i>
+                                        <button class="main-btn"><a href="{% url 'cart_details' %}">View Cart </a>
+                                        </button>
+                                        <button class="primary-btn"><a href="{% url 'checkout_details' %}">Checkout <i
+                                                class="fa fa-arrow-circle-right"></i>
+                                        </a>
                                         </button>
                                     </div>
                                 </div>

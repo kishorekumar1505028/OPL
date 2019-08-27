@@ -1085,6 +1085,10 @@ textarea.input {
     margin-left: 15px;
 }
 
+.page-slick .slick-slide {
+    margin-right: 15px;
+    margin-left: 15px;
+}
 /*=========================================================
 	07 -> PRODUCTS PAGE
 ===========================================================*/

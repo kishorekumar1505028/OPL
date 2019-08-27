@@ -8,6 +8,8 @@ class Profile(models.Model):
     """Profile of user """
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=45 , default="foo")
+    last_name = models.CharField(max_length=45 , default="foo")
     address = models.CharField(max_length=45)
     profession = models.CharField(max_length=45, blank=True, null=True)
     mobile_number = models.CharField(unique=True, max_length=11, blank=True, null=True)

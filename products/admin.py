@@ -31,7 +31,7 @@ class ShopAdmin(admin.ModelAdmin):
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'price', 'image', 'rating')
+    list_display = ('id', 'name', 'old_price', 'price', 'image', 'rating')
 
 
 class ShopProductAdmin(admin.ModelAdmin):
