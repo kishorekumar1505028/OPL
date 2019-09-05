@@ -1,4 +1,5 @@
 {% load static %}
+{% load homepage_extras %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,59 +45,50 @@
                 <div class="col-md-6">
                     <div class="product-body">
                         <div class="product-label">
-                            <span>New</span>
-                            <span class="sale">-20%</span>
+                            {% if product_details.old_price > 0 %}
+                                <span class="sale">{{ product_details.discount }}%</span>
+                            {% endif %}
                         </div>
                         <h2 class="product-name">{{ product_details.name }}</h2>
                         <h3 class="product-price">{{ product_details.price }}
-                            <del class="product-old-price">$45.00</del>
+                            {% if product_details.old_price > 0 %}
+                                <del class="product-old-price">{{ product_details.old_price }}</del>
+                            {% endif %}
                         </h3>
                         <div>
                             <div class="product-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o empty"></i>
+                                {% for i in product_details.rating|getrange:0 %}
+                                    <i class="fa fa-star"></i>
+                                {% endfor %}
+
+                                {% for i in product_details.rating|getrange:5 %}
+                                    <i class="fa fa-star-o empty"></i>
+                                {% endfor %}
                             </div>
-                            <a href="#">3 Review(s) / Add Review</a>
+                            <a href="#">{{ review|length }} Review(s) / Add Review</a>
                         </div>
-                        <p><strong>Availability:</strong> In Stock</p>
-                        <p><strong>Brand:</strong> E-SHOP</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                            anim id est laborum.</p>
-                        <div class="product-options">
-                            <ul class="size-option">
-                                <li><span class="text-uppercase">Size:</span></li>
-                                <li class="active"><a href="#">S</a></li>
-                                <li><a href="#">XL</a></li>
-                                <li><a href="#">SL</a></li>
-                            </ul>
-                            <ul class="color-option">
-                                <li><span class="text-uppercase">Color:</span></li>
-                                <li class="active"><a href="#" style="background-color:#475984;"></a></li>
-                                <li><a href="#" style="background-color:#8A2454;"></a></li>
-                                <li><a href="#" style="background-color:#BF6989;"></a></li>
-                                <li><a href="#" style="background-color:#9A54D8;"></a></li>
-                            </ul>
-                        </div>
+                        {% if product_details.quantity > 0 %}
+                            <p><strong>Availability:</strong> In Stock</p>
+                        {% else %}
+                            <p><strong>Availability:</strong> Not in Stock</p>
+
+                        {% endif %}
+                        <p><strong>Brand:</strong> {{ product_details.name|get_brand }}</p>
+                        <p>The product is {{ product_details.name }}</p>
 
                         <div class="product-btns">
                             <div class="qty-input">
                                 <span class="text-uppercase">QTY: </span>
-                                <input class="input" type="number">
+                                <input class="input" type="number" id="dqty">
                             </div>
-                            <button class="primary-btn add-to-cart"><a href="{% url 'cart_details' %}"><i
+                            <button class="primary-btn add-to-cart"
+                                    onclick="handle_add_to_cart_product_details({{ product_details.id }})"><i
                                     class="fa fa-shopping-cart"></i>
                                 Add to Cart
-                            </a>
+                                </a>
                             </button>
                             <div class="pull-right">
-                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
+                                <button class="main-btn icon-btn" onclick="handle_add_to_wishlist({{ product_details.id }})"><i class="fa fa-heart"></i></button>
                                 <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
                                 <button class="main-btn icon-btn"><i class="fa fa-share-alt"></i></button>
                             </div>
@@ -107,92 +99,30 @@
                     <div class="product-tab">
                         <ul class="tab-nav">
                             <li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-                            <li><a data-toggle="tab" href="#tab1">Details</a></li>
-                            <li><a data-toggle="tab" href="#tab2">Reviews (3)</a></li>
+                            <li><a data-toggle="tab" href="#tab3">Condition</a></li>
+                            {% include 'review_length.html' %}
+
                         </ul>
                         <div class="tab-content">
                             <div id="tab1" class="tab-pane fade in active">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                    deserunt mollit anim id est laborum.</p>
+                                <p>The product is {{ product_details.name }}.</p>
+                            </div>
+                            <div id="tab3" class="tab-pane fade in active">
+                                <ul style="list-style-type:disc;">
+                                    <li>Offer applicable for members only</li>
+                                    <li>You can get the product within 3 to 5 working days after confirmation of the
+                                        order
+                                    </li>
+                                    <li>You can collect the product from the office</li>
+                                    <li>Home delivery is also available</li>
+                                </ul>
                             </div>
                             <div id="tab2" class="tab-pane fade in">
 
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="product-reviews">
-                                            <div class="single-review">
-                                                <div class="review-heading">
-                                                    <div><a href="#"><i class="fa fa-user-o"></i> John</a></div>
-                                                    <div><a href="#"><i class="fa fa-clock-o"></i> 27 DEC 2017 / 8:0 PM</a>
-                                                    </div>
-                                                    <div class="review-rating pull-right">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o empty"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="review-body">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut
-                                                        enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                                        nisi ut aliquip ex ea commodo consequat.Duis aute
-                                                        irure dolor in reprehenderit in voluptate velit esse cillum
-                                                        dolore eu fugiat nulla pariatur.</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="single-review">
-                                                <div class="review-heading">
-                                                    <div><a href="#"><i class="fa fa-user-o"></i> John</a></div>
-                                                    <div><a href="#"><i class="fa fa-clock-o"></i> 27 DEC 2017 / 8:0 PM</a>
-                                                    </div>
-                                                    <div class="review-rating pull-right">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o empty"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="review-body">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut
-                                                        enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                                        nisi ut aliquip ex ea commodo consequat.Duis aute
-                                                        irure dolor in reprehenderit in voluptate velit esse cillum
-                                                        dolore eu fugiat nulla pariatur.</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="single-review">
-                                                <div class="review-heading">
-                                                    <div><a href="#"><i class="fa fa-user-o"></i> John</a></div>
-                                                    <div><a href="#"><i class="fa fa-clock-o"></i> 27 DEC 2017 / 8:0 PM</a>
-                                                    </div>
-                                                    <div class="review-rating pull-right">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o empty"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="review-body">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut
-                                                        enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                                        nisi ut aliquip ex ea commodo consequat.Duis aute
-                                                        irure dolor in reprehenderit in voluptate velit esse cillum
-                                                        dolore eu fugiat nulla pariatur.</p>
-                                                </div>
-                                            </div>
-
+                                            {% include 'single_review.html' %}
                                             <ul class="reviews-pages">
                                                 <li class="active">1</li>
                                                 <li><a href="#">2</a></li>
@@ -201,18 +131,13 @@
                                             </ul>
                                         </div>
                                     </div>
+
                                     <div class="col-md-6">
                                         <h4 class="text-uppercase">Write Your Review</h4>
-                                        <p>Your email address will not be published.</p>
-                                        <form class="review-form">
+                                        <div class="review-form">
                                             <div class="form-group">
-                                                <input class="input" type="text" placeholder="Your Name"/>
-                                            </div>
-                                            <div class="form-group">
-                                                <input class="input" type="email" placeholder="Email Address"/>
-                                            </div>
-                                            <div class="form-group">
-                                                <textarea class="input" placeholder="Your review"></textarea>
+                                                <textarea class="input" placeholder="Your review"
+                                                          id="review_content"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <div class="input-rating">
@@ -231,8 +156,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button class="primary-btn">Submit</button>
-                                        </form>
+                                            <button class="primary-btn" onclick="calc_rating({{ product_details.id }})">
+                                                Submit
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
 

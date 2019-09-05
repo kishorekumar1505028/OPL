@@ -75,6 +75,7 @@ class Product(models.Model):
     rating = models.IntegerField(default='0')
     image = models.ImageField(max_length=1000, blank=True, null=True, upload_to='img')
     category = models.ForeignKey(CategoryTag, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'product'
@@ -85,6 +86,7 @@ class ProductReview(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    rating = models.IntegerField(default='0')
     review = models.CharField(max_length=2000)
 
     class Meta:
@@ -107,6 +109,7 @@ class WishList(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField()
 
     class Meta:
         db_table = 'wish_list'

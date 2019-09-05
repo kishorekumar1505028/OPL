@@ -3,47 +3,52 @@
 
 {% for product in products_list %}
 
-        <div class="col-md-4 col-sm-6 col-xs-6">
-            <div class="product product-single">
-                <div class="product-thumb">
-                    <div class="product-label">
-                        <span>New</span>
-                        <span class="sale">-20%</span>
-                    </div>
-                    <img src="{{ product.image.url }}" alt="" style="...">
+    <div class="col-md-4 col-sm-6 col-xs-6">
+        <div class="product product-single">
+            <div class="product-thumb">
+                <div class="product-label">
+                    <span>New</span>
+                    <span class="sale">{{ product.discount }}%</span>
                 </div>
-                <div class="product-body">
-                    <h3 class="product-price">{{ product.price }}</h3>
-                    <div class="product-rating">
-                        {% for i in product.rating|getrange:0 %}
-                            <i class="fa fa-star"></i>
-                        {% endfor %}
+                <img src="{{ product.image.url }}" alt="" style="...">
+            </div>
+            <div class="product-body">
+                <h3 class="product-price"> &#x9f3 {{ product.price }}
+                    {% if product.old_price > 0 %}
+                        <del class="product-old-price"> &#x9f3 {{ product.old_price }}</del>
+                    {% endif %}
+                </h3>
+                <div class="product-rating">
+                    {% for i in product.rating|getrange:0 %}
+                        <i class="fa fa-star"></i>
+                    {% endfor %}
 
-                        {% for i in product.rating|getrange:5 %}
-                            <i class="fa fa-star-o empty"></i>
-                        {% endfor %}
+                    {% for i in product.rating|getrange:5 %}
+                        <i class="fa fa-star-o empty"></i>
+                    {% endfor %}
 
-                    </div>
-                    <h2 class="product-name"><a href="{% url 'product_details' product.id %}">{{ product.name }}</a>
-                    </h2>
-                    <div class="product-btns">
-                        <button class="main-btn icon-btn"><i class="fa fa-heart"></i>
-                        </button>
-                        <button class="main-btn icon-btn"><i class="fa fa-exchange"></i>
-                        </button>
-                        <button class="primary-btn add-to-cart" onclick="handle_add_to_cart({{ product.id }})"> <a><i class="fa fa-shopping-cart"></i>
-                            Add to
-                            Cart
-                        </a>
-                        </button>
-                    </div>
+                </div>
+                <h2 class="product-name"><a href="{% url 'product_details' product.id %}">{{ product.name }}</a>
+                </h2>
+                <div class="product-btns">
+                    <button class="main-btn icon-btn" onclick="handle_add_to_wishlist({{ product.id }})"><i class="fa fa-heart"></i>
+                    </button>
+                    <button class="main-btn icon-btn"><i class="fa fa-exchange"></i>
+                    </button>
+                    <button class="primary-btn add-to-cart" onclick="handle_add_to_cart({{ product.id }})"><a><i
+                            class="fa fa-shopping-cart"></i>
+                        Add to
+                        Cart
+                    </a>
+                    </button>
                 </div>
             </div>
         </div>
+    </div>
 
-     {% if forloop.counter|divisibleby:3 %}
+    {% if forloop.counter|divisibleby:3 %}
         <div class="clearfix visible-md visible-lg"></div>
 
-     {% endif %}
-        <!-- /Product Single -->
+    {% endif %}
+    <!-- /Product Single -->
 {% endfor %}

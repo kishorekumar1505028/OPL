@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load homepage_extras %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,8 +17,8 @@
 <div id="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li class="active">Checkout</li>
+            <li><a href="">Home</a></li>
+            <li class="active">Cart Details</li>
         </ul>
     </div>
 </div>
@@ -45,7 +45,7 @@
                                 <th class="text-center">Price</th>
                                 <th class="text-center">Quantity</th>
                                 <th class="text-center">Total</th>
-                                <th class="text-right"></th>
+                                <th class="text-right"> Remove</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -55,7 +55,7 @@
                             <tr>
                                 <th class="empty" colspan="3"></th>
                                 <th>SUBTOTAL</th>
-                                <th colspan="2" class="sub-total">$97.50</th>
+                                <th colspan="2" class="sub-total"> &#x9f3 {{user_cart|cart_total_price }}</th>
                             </tr>
                             <tr>
                                 <th class="empty" colspan="3"></th>
@@ -65,12 +65,12 @@
                             <tr>
                                 <th class="empty" colspan="3"></th>
                                 <th>TOTAL</th>
-                                <th colspan="2" class="total">$97.50</th>
+                                <th colspan="2" class="total"> &#x9f3 {{user_cart|cart_total_price }} </th>
                             </tr>
                             </tfoot>
                         </table>
                         <div class="pull-right">
-                            <button class="primary-btn">Place Order</button>
+                            <button class="primary-btn"> <a href="{% url 'checkout_details' %}"> Checkout </a></button>
                         </div>
                     </div>
 

@@ -249,13 +249,27 @@
 
 "use strict";
 
-function add_to_cart_ajax(id) {
+function update_qty_number(new_val) {
+    var prev = parseInt($('#cart_qty').text());
+    prev = prev + parseInt(new_val);
+    alert(prev);
+    $('#cart_qty').text(prev);
+}
+
+function isInt(value) {
+    return !isNaN(value) && (function (x) {
+        return (x | 0) === x;
+    })(parseFloat(value))
+}
+
+function add_to_cart_ajax(id, a) {
     $.ajax({
         url: '.',
         type: 'POST',
         data: {
-            'act':'add_to_cart',
-            'product_id': id
+            'act': 'add_to_cart',
+            'product_id': id,
+            'numbers': a
         },
         dataType: 'json',
         success: function (data) {
@@ -263,10 +277,11 @@ function add_to_cart_ajax(id) {
                 if (data['error_msg']) {
                     console.log(data['error_msg']);
                     alert(data['error_msg']);
-                }
-                else
-                {
+                } else {
+                    alert('Product is added to cart');
                     $('.shopping-cart-list').html(data['html_from_view']);
+                    $('#cart_qty').html("");
+                    $('#cart_qty').html(data['html_cart_size']);
                 }
 
             }
@@ -275,22 +290,176 @@ function add_to_cart_ajax(id) {
 
 }
 
-function update_qty_number(do_add) {
+function add_to_wishlist_ajax(id, a) {
+    $.ajax({
+        url: '.',
+        type: 'POST',
+        data: {
+            'act': 'add_to_wishlist',
+            'product_id': id,
+            'numbers': a
+        },
+        dataType: 'json',
+        success: function (data) {
+            if (data) {
+                if (data['error_msg']) {
+                    console.log(data['error_msg']);
+                    alert(data['error_msg']);
+                } else {
+                    alert('Product is added to wishlist');
+                }
 
-    var qty = Number($('.qty').text());
-    if (do_add == true)
-        qty++;
-    else {
-        qty--;
-        qty = Math.max(0,qty);
-    }
+            }
+        }
+    });
 
-    $('.qty').text(qty);
 }
 
+function reload_reviews(id) {
+    $.ajax({
+        url: '.',
+        type: 'POST',
+        data: {
+            'act': 'reload_review',
+            'id': id
+        },
+        dataType: 'json',
+        success: function (data) {
+            if (data) {
+                if (data['error_msg']) {
+                    console.log(data['error_msg']);
+                    alert(data['error_msg']);
+                } else {
+                    alert('Review published');
+                    $('.product-reviews').html(data['html_from_view']);
+                    $('#review_len').html(data['html2_from_view']);
+
+
+                }
+
+            }
+        }
+    });
+}
+
+function write_review_ajax(rating, review_content, id) {
+    alert("writing review ajax");
+    $.ajax({
+        url: '.',
+        type: 'POST',
+        data: {
+            'act': 'write_review',
+            'rating': rating,
+            'id': id,
+            'review': review_content
+        },
+        dataType: 'json',
+        success: function (data) {
+            if (data) {
+                if (data['error_msg']) {
+                    console.log(data['error_msg']);
+                    alert(data['error_msg']);
+                } else {
+                    alert('Review published');
+                    reload_reviews(id);
+
+                }
+
+            }
+        }
+    });
+
+}
+
+
 function handle_add_to_cart(id) {
-    update_qty_number(true);
-    add_to_cart_ajax(id);
+    alert("js func handle add to cart called")
+    add_to_cart_ajax(id, 1);
+}
+
+function handle_add_to_wishlist(id) {
+
+    alert("ccalling wishlist");
+    add_to_wishlist_ajax(id, 1);
+}
+
+function calc_rating(id) {
+    var rates = document.getElementsByName('rating');
+    var rate_value = 0;
+    for (var i = 0; i < rates.length; i++) {
+        if (rates[i].checked) {
+            rate_value = rates[i].value;
+        }
+    }
+    var review_content = document.getElementById('review_content').value;
+    alert(review_content);
+    write_review_ajax(parseInt(rate_value), review_content, id)
+}
+
+function select_shipping() {
+    var types = document.getElementsByName('shipping');
+    var type_value = 0;
+    var type_id = "";
+    for (var i = 0; i < types.length; i++) {
+        if (types[i].checked) {
+            type_value = types[i].value;
+            type_title = types[i].title;
+        }
+    }
+    alert(type_value);
+    document.getElementById('shipping_field').innerText = type_title + " \u09F3 " + type_value;
+    var tval = document.getElementById('total_price').innerText;
+    tval = parseFloat(tval.slice(2, tval.length));
+    if (type_value == 40)
+        tval += 40;
+    alert(tval);
+    document.getElementById('total_price').innerText = '\u09F3 ' + tval;
+}
+
+function place_order(id) {
+    $.ajax({
+        url: '.',
+        type: 'POST',
+        data: {
+            'act': 'place_order',
+            'id': id,
+        },
+        dataType: 'json',
+        success: function (data) {
+            if (data) {
+                if (data['error_msg']) {
+                    console.log(data['error_msg']);
+                    alert(data['error_msg']);
+                } else {
+                    alert('Your order has been placed , Thanks for shopping from us!!!');
+
+                }
+                $('#cart_info').html(data['html_from_view']);
+                $('#cart_qty').html("");
+                $('#cart_qty').html(data['html_cart_size']);
+            }
+        }
+    });
+}
+
+function handle_add_to_cart_product_details(id) {
+    var a = document.getElementById('dqty').value;
+    if (isInt(a) == false)
+        alert("Fill up the quantity as integer");
+    else {
+        a = parseInt(a);
+        if (a == 0)
+            alert("Insert a nonzero value");
+        else if (a < 0)
+            alert("Insert a positive value");
+        else {
+            alert(a);
+            add_to_cart_ajax(id, a);
+        }
+
+    }
+
+
 }
 
 var elements = document.getElementsByClassName("dummy");

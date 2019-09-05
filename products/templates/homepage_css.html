@@ -1,44 +1,53 @@
 {% block homepage_css %}
-{% load static %}
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    {% load static %}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>E-SHOP HTML Template</title>
+        <title>E-SHOP HTML Template</title>
 
-    <link rel="icon" type="image/png" href="{% static 'login/images/icons/favicon.ico' %}"/>
+        <link rel="icon" type="image/png" href="{% static 'login/images/icons/favicon.ico' %}"/>
 
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
+        <!-- Google font -->
+        <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
 
-    <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="{% static 'homepage/css/bootstrap.min.css' %}"/>
+        <!-- Bootstrap -->
+        <link type="text/css" rel="stylesheet" href="{% static 'homepage/css/bootstrap.min.css' %}"/>
 
-    <!-- Slick -->
-    <link type="text/css" rel="stylesheet" href="{% static 'homepage/css/slick.css' %}"/>
-    <link type="text/css" rel="stylesheet" href="{% static 'homepage/css/slick-theme.css' %}"/>
+        <!-- Slick -->
+        <link type="text/css" rel="stylesheet" href="{% static 'homepage/css/slick.css' %}"/>
+        <link type="text/css" rel="stylesheet" href="{% static 'homepage/css/slick-theme.css' %}"/>
 
-    <!-- nouislider -->
-    <link type="text/css" rel="stylesheet" href="{% static 'homepage/css/nouislider.min.css' %}"/>
+        <!-- nouislider -->
+        <link type="text/css" rel="stylesheet" href="{% static 'homepage/css/nouislider.min.css' %}"/>
 
-    <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="{% static 'homepage/css/font-awesome.min.css' %}">
+        <!-- Font Awesome Icon -->
+        <link rel="stylesheet" href="{% static 'homepage/css/font-awesome.min.css' %}">
 
-    <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="{% static 'homepage/css/style.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'login/toastr/css/toastr.min.css' %}"
+              media="screen,projection"/>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and static queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+        <link type="text/css" rel="stylesheet" href="{% static 'login/toastr/css/style.css' %}"
+              media="screen,projection"/>
+
+
+        <!-- Custom stlylesheet -->
+        <link type="text/css" rel="stylesheet" href="{% static 'homepage/css/style.css' %}">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and static queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!--===============================================================================================-->
+        <!--===============================================================================================-->
+        {# toastr jss #}
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
+        <script type="text/javascript" src="{% static 'login/toastr/js/toastr.min.js' %}"></script>
 
-
-</head>
+    </head>
 {% endblock %}
 `

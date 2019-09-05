@@ -1,0 +1,21 @@
+{% load homepage_extras %}
+{% load static %}
+{% for single_review in review %}
+    <div class="single-review">
+        <div class="review-heading">
+            <div><a href=""><i class="fa fa-user-o"></i> {{ single_review.user.username }}</a></div>
+            <div class="review-rating pull-right">
+                {% for i in single_review.rating|getrange:0 %}
+                    <i class="fa fa-star"></i>
+                {% endfor %}
+
+                {% for i in single_review.rating|getrange:5 %}
+                    <i class="fa fa-star-o empty"></i>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="review-body">
+            <p> {{ single_review.review }}</p>
+        </div>
+    </div>
+{% endfor %}

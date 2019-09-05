@@ -1298,9 +1298,6 @@ textarea.input {
     opacity: 0;
 }
 
-#product-main-view:hover .slick-arrow {
-    opacity: 1;
-}
 
 #product-view {
     margin-top: 10px;
@@ -1324,6 +1321,7 @@ textarea.input {
 .product-view > img {
     width: 100%;
 }
+
 
 /*----------------------------*\
 	Product details

@@ -15,7 +15,26 @@ def get_min_max(item_list):
             min_val = pval
         if pval > max_val:
             max_val = pval
-    return {int(min_val),int(max_val)}
+    return {int(min_val), int(max_val)}
+
+
+@register.filter(name='get_brand')
+def get_brand(name):
+    return name[0:name.find(' ')]
+
+
+@register.filter(name='cart_total_price')
+def cart_total_price(carts):
+    total = 0
+    for cart in carts:
+        total += cart.quantity * cart.product.price
+    return total
+
+
+@register.filter(name='get_part_totoal')
+def get_part_totoal(price, arg):
+    total = price * arg
+    return total
 
 
 @register.filter(name='getrange')
@@ -41,6 +60,11 @@ def setfoo(val):
     foo = 2
     print("foo : ")
     print(foo)
+
+
+@register.filter
+def subtract(value, arg):
+    return value - arg
 
 
 @register.filter(name='getcategory')

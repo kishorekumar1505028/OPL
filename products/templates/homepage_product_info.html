@@ -7,7 +7,7 @@
             <div class="product-thumb">
                 <div class="product-label">
                     <span>New</span>
-                    <span class="sale">-20%</span>
+                    <span class="sale">{{ product.discount }}%</span>
                 </div>
 
                 {% if product.image %}
@@ -17,8 +17,10 @@
 
             </div>
             <div class="product-body">
-                <h3 class="product-price">${{ product.price }}
-                    <del class="product-old-price">$45.00</del>
+                <h3 class="product-price"> &#x9f3 {{ product.price }}
+                    {% if product.old_price > 0 %}
+                        <del class="product-old-price"> &#x9f3 {{ product.old_price }}</del>
+                    {% endif %}
                 </h3>
 
                 <div class="product-rating">
@@ -38,16 +40,15 @@
                 <h2 class="product-name"><a
                         href="{% url 'product_details' product.id %}">{{ product.name }}</a>
                 </h2>
-                <h2 class="shop-name"><a href="#">Shop Name</a></h2>
                 <div class="product-btns">
-                    <button class="main-btn icon-btn"><i class="fa fa-heart"></i>
+                    <button class="main-btn icon-btn" onclick="handle_add_to_wishlist({{ product.id }})"><i class="fa fa-heart"></i>
                     </button>
                     <button class="main-btn icon-btn"><i class="fa fa-exchange"></i>
                     </button>
-                    <button class="primary-btn add-to-cart" onclick="handle_add_to_cart({{ product.id }})"> <a><i
+                    <button class="primary-btn add-to-cart" onclick="handle_add_to_cart({{ product.id }})"><a><i
                             class="fa fa-shopping-cart"></i> Add to
                         Cart
-                    </a> </button>
+                    </a></button>
                 </div>
             </div>
         </div>

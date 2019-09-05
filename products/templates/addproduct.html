@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Product Form</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'register/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'register/css/style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'login/images/icons/favicon.ico' %}">
+    <!--===============================================================================================-->
+    {#toastr css#}
+    <link type="text/css" rel="stylesheet" href="{% static 'login/toastr/css/toastr.min.css' %}"
+          media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'login/toastr/css/style.css' %}" media="screen,projection"/>
+
+
+    {# toastr jss #}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script type="text/javascript" src="{% static 'login/toastr/js/toastr.min.js' %}"></script>
+
+</head>
+<body>
+
+<div class="main">
+    <div class="container">
+        <div class="signup-content">
+            <div class="signup-img">
+                <img src="/media/img/cover.jpg" alt="">
+            </div>
+            {% if messages %}
+                {% include 'toast_messages.html' %}
+            {% endif %}
+
+            <div class="signup-form">
+                <form method="POST" class="register-form" id="register-form" action="{% url 'add_product' %}">
+                    {% csrf_token %}
+                    <h2>Add Product Form</h2>
+                    <div class="form-group">
+                        <label for="product_name">Product Name :</label>
+                        <input type="text" name="product_name" id="product_name" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description :</label>
+                        <input type="text" name="description" id="description" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">Quantity :</label>
+                        <input type="text" name="quantity" id="quantity"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price :</label>
+                        <input type="text" name="price" id="price">
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image :</label>
+                        <input type="file" name="image" accept="image/*" id="image">
+
+                    </div>
+                    <div class="form-group">
+                        <label class="required" for="category">Category:</label>
+
+                        <select class="input search-categories" name="category">
+
+                            <option selected disabled>Select Category</option>
+
+                            {% for i in category_list %}
+                                <option value="{{ forloop.counter }}"> {{ i.category }} </option>
+                            {% endfor %}
+
+                        </select>
+
+                    </div>
+                    <div class="form-submit">
+                        <input type="submit" value="Reset All" class="submit" name="reset" id="reset"/>
+                        <input type="submit" value="Submit Form" class="submit" name="submit" id="submit"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- JS -->
+<script src="{% static 'register/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'register/js/main.js' %}"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
