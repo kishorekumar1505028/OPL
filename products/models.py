@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.signals import post_save
@@ -8,8 +9,8 @@ class Profile(models.Model):
     """Profile of user """
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=45 , default="foo")
-    last_name = models.CharField(max_length=45 , default="foo")
+    first_name = models.CharField(max_length=45, default="foo")
+    last_name = models.CharField(max_length=45, default="foo")
     address = models.CharField(max_length=45)
     profession = models.CharField(max_length=45, blank=True, null=True)
     mobile_number = models.CharField(unique=True, max_length=11, blank=True, null=True)
@@ -63,6 +64,11 @@ class CategoryTag(models.Model):
         db_table = 'category_tag'
 
 
+def product_image_path(instance, filename):
+    # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
+    return 'img/{0}/{1}'.format(instance.category.category.lower(), filename)
+
+
 class Product(models.Model):
     """Product refers to the products of the site"""
 
@@ -73,7 +79,7 @@ class Product(models.Model):
     price = models.FloatField(default='0')
     discount = models.FloatField(default='0')
     rating = models.IntegerField(default='0')
-    image = models.ImageField(max_length=1000, blank=True, null=True, upload_to='img')
+    image = models.ImageField(max_length=1000, blank=True, null=True, upload_to=product_image_path)
     category = models.ForeignKey(CategoryTag, on_delete=models.CASCADE)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -136,13 +142,36 @@ class ShopProduct(models.Model):
         db_table = 'shop_product'
 
 
+PENDING = 0
+DONE = 1
+STATUS_CHOICES = [
+    (PENDING, 'Pending'),
+    (DONE, 'Done'),
+]
+
+
 class PurchaseLog(models.Model):
     """ PurchaseLog class refers to the time and product of the user's purchase"""
 
-    time = models.DateTimeField()
+    time = models.DateTimeField(default=datetime.now)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    amount = models.FloatField(default=0)
+    quantity = models.FloatField(default=0)
+
+    orderStatus = models.IntegerField(
+        max_length=1,
+        choices=STATUS_CHOICES,
+        default=PENDING,
+    )
 
     class Meta:
         db_table = 'purchase_log'
+
+
+@receiver(post_save, sender=PurchaseLog)
+def update_product_quantity(sender, instance, created, **kwargs):
+    """product quantity update function """
+    if not created:
+        if instance.orderStatus == DONE:
+            new_quantity = Product.objects.filter(id=instance.product.id).first().quantity - instance.quantity
+            Product.objects.filter(id=instance.product.id).update(quantity=new_quantity)

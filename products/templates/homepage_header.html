@@ -11,14 +11,12 @@
         <div id="top-header">
             <div class="container">
                 <div class="pull-left">
-                    <span>Welcome to Online Shopping!</span>
+                    <span>Welcome to Online Shopping  {{request.user.username}} !</span>
                 </div>
 
                 <div class="pull-right">
                     <ul class="header-top-links">
-                        <li><a href="{% url 'add_product'%}">Add Product</a></li>
-                        <li><a href="#">FAQ</a></li>
-
+                        <li><a href="{% url 'vendor_homepage'%}">Vendor Homepage</a></li>
                     </ul>
                 </div>
             </div>
@@ -69,7 +67,8 @@
                             <a href="{% url 'login_user' %}" class="text-uppercase">Sign in</a> / <a
                                 href="{% url 'logout_user' %}" class="text-uppercase">Sign out</a>
                             <ul class="custom-menu">
-                                <li><a href="{% url 'order_request_details' %}"><i class="fa fa-user-o"></i> Order request</a></li>
+                                <li><a href="{% url 'order_request_details' %}"><i class="fa fa-list"></i> Order request</a></li>
+                                <li><a href="{% url 'purchase_history_details' %}"><i class="fa fa-history"></i>Purchase History</a></li>
                                 <li><a href="{% url 'wishlist_details' %}"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
                                 <li><a href="#"><i class="fa fa-unlock-alt"></i> Login</a></li>
                                 <li><a href="#"><i class="fa fa-user-plus"></i> Create An Account</a></li>
@@ -80,10 +79,7 @@
                         <!-- Cart -->
                         <li class="header-cart dropdown default-dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                                <div class="header-btns-icon">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    <span class="qty" id = "cart_qty">{{ cart_size }}</span>
-                                </div>
+                                {% include 'cart_size.html' %}
                                 <strong class="text-uppercase">My Cart</strong>
                                 <br>
                             </a>

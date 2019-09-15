@@ -1,0 +1,29 @@
+{% load homepage_extras %}
+{% load static %}
+
+{% for order in orders %}
+
+    <tr>
+        <td class="thumb"><img src="{{ order.product.image.url }}" alt=""></td>
+        <td class="details">
+            <a href=""> {{ order.product.name }}</a>
+            <ul>
+                <li><span>attr1: val1</span></li>
+                <li><span>attr2: val2</span></li>
+            </ul>
+        </td>
+        <td class="price text-center"><strong> &#x9f3 {{ order.product.price }}</strong><br>
+            <del class="font-weak">
+                <small> &#x9f3 {{ order.product.old_price }}</small>
+            </del>
+        </td>
+        <td class="total text-center"><strong class="primary-color"> {{ order.quantity }}</td>
+        <td class="total text-center"><strong class="primary-color">{{ order.get_orderStatus_display }}</td>
+        <td class="total text-center"><strong class="primary-color">
+            &#x9f3 {{ order.product.price|get_part_totoal:order.quantity }}</strong></td>
+        <td class="total text-center"><strong class="primary-color">{{ order.user.profile.first_name }}</strong></td>
+        <td> <strong> {{ order.time|date:"D,d M,Y" }} </strong></td>
+
+
+    </tr>
+{% endfor %}

@@ -1,0 +1,8 @@
+{% load static %}
+{% load homepage_extras %}
+
+<th class="empty" colspan="3"></th>
+<th>SUBTOTAL</th>
+<th colspan="2" class="sub-total" id="subtotal_price" value="{{ user_cart|cart_total_price }}">
+    &#x9f3 {{ user_cart|cart_total_price }}
+</th>

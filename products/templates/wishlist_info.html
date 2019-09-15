@@ -17,10 +17,19 @@
                 <small> &#x9f3 {{ wish.product.old_price }}</small>
             </del>
         </td>
-        <td class="qty text-center"><input class="input" type="number" value="{{ wish.quantity }}"></td>
-        <td class="total text-center"><strong class="primary-color">
-            &#x9f3 {{ wish.product.price|get_part_totoal:wish.quantity }}</strong></td>
-        {% if product_details.quantity > 0 %}
+        <td class="product-rating">
+
+            {% for i in wish.product.rating|getrange:0 %}
+                <i class="fa fa-star"></i>
+            {% endfor %}
+
+            {% for i in wish.product.rating|getrange:5 %}
+                <i class="fa fa-star-o empty"></i>
+            {% endfor %}
+
+
+        </td>
+        {% if wish.product.quantity > 0 %}
             <td class="total text-center"><strong>
                 Available </strong></td>
         {% else %}
@@ -28,9 +37,9 @@
                 Not available </strong></td>
         {% endif %}
         <td class="text-center" class="add-to-cart">
-            <button class="main-btn icon-btn"><i class="fa fa-shopping-cart"></i></button>
+            <button class="main-btn icon-btn"><i class="fa fa-shopping-cart" onclick="remove_cart_from_wishlist({{ wish.product.id }})"></i></button>
         <td class="text-right">
-            <button class="main-btn icon-btn"><i class="fa fa-close"></i></button>
+            <button class="main-btn icon-btn"><i class="fa fa-close" onclick="handle_add_to_wishlist({{ wish.product.id }} , 0)"></i></button>
         </td>
 
         </td>

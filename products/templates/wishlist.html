@@ -30,38 +30,34 @@
     <div class="container">
         <!-- row -->
         <div class="row">
-            <form id="checkout-form" class="clearfix">
-
-                <div class="col-md-12">
-                    <div class="order-summary clearfix">
-                        <div class="section-title">
-                            <h3 class="title">MY Wishlist</h3>
-                        </div>
-                        <table class="shopping-cart-table table">
-                            <thead>
-                            <tr>
-                                <th>Product</th>
-                                <th></th>
-                                <th class="text-center">Price</th>
-                                <th class="text-center">Quantity</th>
-                                <th class="text-center">Total</th>
-                                <th class="text-center">Stock Status</th>
-                                <th class="text-center"></th>
-                                <th class="text-right"></th>
-
-                            </tr>
-                            </thead>
-                            <tbody>
-                                {% include 'wishlist_info.html' %}
-                            </tbody>
-                        </table>
-                        <div class="pull-right">
-                            <button class="primary-btn">Remove All</button>
-                        </div>
+            <div class="col-md-12">
+                <div class="order-summary clearfix">
+                    <div class="section-title">
+                        <h3 class="title">MY Wishlist</h3>
                     </div>
+                    <table class="shopping-cart-table table">
+                        <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th></th>
+                            <th class="text-center">Price</th>
+                            <th class="text-center">Rating</th>
+                            <th class="text-center">Stock Status</th>
+                            <th class="text-center"></th>
+                            <th class="text-right"></th>
 
+                        </tr>
+                        </thead>
+                        <tbody id="wishlist_info">
+                        {% include 'wishlist_info.html' %}
+                        </tbody>
+                    </table>
+                    <div class="pull-right">
+                        <button class="primary-btn">Remove All</button>
+                    </div>
                 </div>
-            </form>
+
+            </div>
         </div>
         <!-- /row -->
     </div>

@@ -1,0 +1,59 @@
+{% load static %}
+{% load homepage_extras %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'homepage_css.html' %}
+
+<body>
+<!-- HEADER -->
+{% include 'vendor_homepage_header.html' %}
+
+<!-- section -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="order-summary clearfix">
+                    <div class="section-title">
+                        <h3 class="title">Storage Details</h3>
+                    </div>
+                    <table class="shopping-cart-table table">
+                        <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th></th>
+                            <th class="text-center">Price</th>
+                            <th class="text-center">Discount</th>
+                            <th class="text-center">Quantity</th>
+                            <th class="text-center">Rating</th>
+                            <th class="text-right"> Remove</th>
+                        </tr>
+                        </thead>
+                        <tbody id="storage_info">
+                        {% include 'vendor_storage_info.html' %}
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /section -->
+
+<!--footer -->
+{% include 'homepage_footer.html' %}
+<!-- footer -->
+
+{% include 'homepage_js.html' %}
+</body>
+
+</html>

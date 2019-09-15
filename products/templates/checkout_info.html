@@ -1,0 +1,26 @@
+{% load homepage_extras %}
+
+
+{% for cart in user_cart %}
+
+<tr>
+    <td class="thumb"><img src="{{ cart.product.image.url }}" alt=""></td>
+    <td class="details">
+        <a href=""> {{ cart.product.name }}</a>
+        <ul>
+            <li><span>attr1: val1</span></li>
+            <li><span>attr2: val2</span></li>
+        </ul>
+    </td>
+    <td class="price text-center"><strong> &#x9f3 {{cart.product.price }}</strong><br>
+        <del class="font-weak">
+            <small> &#x9f3 {{ cart.product.old_price }}</small>
+        </del>
+    </td>
+    <td class="qty text-center" type="number" value="{{ cart.quantity }}">{{ cart.quantity }}</td>
+    <td class="total text-center"><strong class="primary-color"> &#x9f3 {{ cart.product.price|get_part_totoal:cart.quantity }}</strong></td>
+    <td class="text-right">
+        <button class="main-btn icon-btn" ><i class="fa fa-close" onclick="remove_from_cart({{cart.product.id}})"></i></button>
+    </td>
+</tr>
+{% endfor %}

@@ -30,52 +30,38 @@
     <div class="container">
         <!-- row -->
         <div class="row">
-            <form id="checkout-form" class="clearfix">
 
-                <div class="col-md-12">
-                    <div class="order-summary clearfix">
-                        <div class="section-title">
-                            <h3 class="title">Cart Details</h3>
-                        </div>
-                        <table class="shopping-cart-table table">
-                            <thead>
-                            <tr>
-                                <th>Product</th>
-                                <th></th>
-                                <th class="text-center">Price</th>
-                                <th class="text-center">Quantity</th>
-                                <th class="text-center">Total</th>
-                                <th class="text-right"> Remove</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                {% include 'cart_info.html' %}
-                            </tbody>
-                            <tfoot>
-                            <tr>
-                                <th class="empty" colspan="3"></th>
-                                <th>SUBTOTAL</th>
-                                <th colspan="2" class="sub-total"> &#x9f3 {{user_cart|cart_total_price }}</th>
-                            </tr>
-                            <tr>
-                                <th class="empty" colspan="3"></th>
-                                <th>SHIPING</th>
-                                <td colspan="2">Free Shipping</td>
-                            </tr>
-                            <tr>
-                                <th class="empty" colspan="3"></th>
-                                <th>TOTAL</th>
-                                <th colspan="2" class="total"> &#x9f3 {{user_cart|cart_total_price }} </th>
-                            </tr>
-                            </tfoot>
-                        </table>
-                        <div class="pull-right">
-                            <button class="primary-btn"> <a href="{% url 'checkout_details' %}"> Checkout </a></button>
-                        </div>
+            <div class="col-md-12">
+                <div class="order-summary clearfix">
+                    <div class="section-title">
+                        <h3 class="title">Cart Details</h3>
                     </div>
-
+                    <table class="shopping-cart-table table">
+                        <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th></th>
+                            <th class="text-center">Price</th>
+                            <th class="text-center">Quantity</th>
+                            <th class="text-center">Total</th>
+                            <th class="text-right"> Remove</th>
+                        </tr>
+                        </thead>
+                        <tbody id="cart_info">
+                        {% include 'cart_info.html' %}
+                        </tbody>
+                        <tfoot>
+                        <tr id="cart_total">
+                            {% include 'cart_total.html' %}
+                        </tr>
+                        </tfoot>
+                    </table>
+                    <div class="pull-right">
+                        <button class="primary-btn"><a href="{% url 'checkout_details' %}"> Checkout </a></button>
+                    </div>
                 </div>
-            </form>
+
+            </div>
         </div>
         <!-- /row -->
     </div>

@@ -41,7 +41,11 @@ INSTALLED_APPS = [
     'products',
     'shopDB',
     'whitenoise.runserver_nostatic',
+    'crispy_forms',
+
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

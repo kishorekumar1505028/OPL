@@ -1,0 +1,74 @@
+{% load static %}
+{% load homepage_extras %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'homepage_css.html' %}
+
+<body>
+<!-- HEADER -->
+{% include 'vendor_homepage_header.html' %}
+
+
+<!-- BREADCRUMB -->
+<div id="breadcrumb">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="">Home</a></li>
+            <li class="active">{{ title }}</li>
+        </ul>
+    </div>
+</div>
+<!-- /BREADCRUMB -->
+
+<!-- section -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <form id="checkout-form" class="clearfix">
+
+                <div class="col-md-12">
+                    <div class="order-summary clearfix">
+                        <div class="section-title">
+                            <h3 class="title">{{ title }}</h3>
+                        </div>
+                        <table class="shopping-cart-table table">
+                            <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th></th>
+                                <th class="text-center">Price</th>
+                                <th class="text-center">Quantity</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center">Total</th>
+                                <th class="text-center">Customer</th>
+                                <th class="text-center">Date</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {% include 'vendor_order_request_info.html' %}
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /section -->
+
+<!--footer -->
+{% include 'homepage_footer.html' %}
+<!-- footer -->
+
+{% include 'homepage_js.html' %}
+</body>
+
+</html>
