@@ -6,15 +6,14 @@ from django.contrib.auth.models import User
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.http import JsonResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.template.loader import render_to_string
 from django.views.decorators.csrf import csrf_exempt
-from django.core.files.storage import FileSystemStorage
 
 from products.models import Cart, WishList
 from .models import Product
 from .models import Shop, TopCategory, TopSuper, CategoryTag, SuperCategory, ProductReview, PurchaseLog
-from products.forms import ProductForm
+from products.forms import ProductForm, ProductUpdateForm
 
 PENDING = 0
 DONE = 1
@@ -837,7 +836,33 @@ def add_product(request):
 
     else:
         form = ProductForm()
-        return render(request, 'addproduct.html', {'category_list': cattag, 'form': form})
+        return render(request, 'addproduct.html', {'category_list': cattag, 'form': form, 'title': 'Add Product Form'})
+
+
+def update_product(request, product_id):
+    instance = get_object_or_404(Product, id=product_id)
+    form = ProductUpdateForm(request.POST or None, request.FILES or None, instance=instance)
+
+    if request.method == 'POST':
+        print('printing form')
+        print(form)
+        if form.is_valid():
+            form.save()
+            msg = "Product has been updated"
+            messages.add_message(request, messages.SUCCESS, msg)
+
+        else:
+            msg = "updating Product Failed"
+            messages.add_message(request, messages.ERROR, msg)
+
+        """
+        @send user greetings
+        """
+
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+    else:
+        return render(request, 'addproduct.html', {'category_list': cattag,'product':instance,  'form': form, 'title': 'Update Product'})
 
 
 @login_required

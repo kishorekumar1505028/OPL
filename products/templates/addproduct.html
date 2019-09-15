@@ -15,16 +15,18 @@
     <link rel="stylesheet" href="{% static 'register/css/style.css' %}">
     <link rel="icon" type="image/png" href="{% static 'login/images/icons/favicon.ico' %}">
     <!--===============================================================================================-->
+    {# toastr jss #}
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'login/toastr/js/toastr.min.js' %}"></script>
+
+    {# admin css #}
+
     {#toastr css#}
     <link type="text/css" rel="stylesheet" href="{% static 'login/toastr/css/toastr.min.css' %}"
           media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="{% static 'login/toastr/css/style.css' %}" media="screen,projection"/>
 
-
-    {# toastr jss #}
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
-    <script type="text/javascript" src="{% static 'login/toastr/js/toastr.min.js' %}"></script>
 
 </head>
 <body>
@@ -40,10 +42,11 @@
             {% endif %}
 
             <div class="signup-form">
-                <form method="POST" class="register-form" id="register-form" enctype="multipart/form-data" action="{% url 'add_product' %}">
+                <form method="POST" class="register-form" id="register-form" enctype="multipart/form-data"
+                      action="{% url 'update_product' product.id %}">
 
                     {% csrf_token %}
-                    <h2>Add Product Form</h2>
+                    <h2>{{ title }}</h2>
                     {{ form|crispy }}
                     <div class="form-submit">
                         <input type="submit" value="Reset All" class="submit" name="reset" id="reset"/>

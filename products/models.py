@@ -1,8 +1,25 @@
 from datetime import datetime
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+
+Admin = 0
+Customer = 1
+Vendor = 2
+
+MEMBER_CHOICES = [
+    (Admin, 'Admin'),
+    (Customer, 'Customer'),
+    (Vendor, 'Vendor')
+]
+
+
+class User(AbstractUser):
+    type = models.IntegerField(
+        choices=MEMBER_CHOICES,
+        default=Admin,
+    )
 
 
 class Profile(models.Model):
@@ -72,6 +89,14 @@ def product_image_path(instance, filename):
     return 'img/{0}/{1}'.format(instance.category.category.lower(), filename)
 
 
+Discount = 1
+No_discount = 0
+Discount_CHOICES = [
+    (Discount, 'Discount'),
+    (No_discount, 'No discount'),
+]
+
+
 class Product(models.Model):
     """Product refers to the products of the site"""
 
@@ -81,6 +106,11 @@ class Product(models.Model):
     old_price = models.FloatField(default='0')
     price = models.FloatField(default='0')
     discount = models.FloatField(default='0')
+    discountStatus = models.IntegerField(
+        choices=Discount_CHOICES,
+        default=No_discount,
+    )
+    discountDeadline = models.DateField(null=True, blank=True)
     rating = models.IntegerField(default='0')
     image = models.ImageField(max_length=1000, blank=True, null=True, upload_to=product_image_path)
     category = models.ForeignKey(CategoryTag, on_delete=models.CASCADE)

@@ -6,7 +6,7 @@
     <tr>
         <td class="thumb"><img src="{{ product.image.url }}" alt=""></td>
         <td class="details">
-            <a href=""> {{ product.name }}</a>
+            <a href="{% url 'update_product' product.id %}"> {{ product.name }}</a>
             <ul>
                 <li><span>attr1: val1</span></li>
                 <li><span>attr2: val2</span></li>
@@ -16,7 +16,7 @@
             <div class="form">
                 <div class="form-group">
                     <input class="input storage_price" type="number" value="{{ product.price }}" style="width: 150px;"
-                           onchange="show_save_button()"><br>
+                           onchange="show_save_button({{ forloop.counter }})"><br>
                     {% if product.old_price > 0 %}
                         <del class="font-weak">
                             <small> &#x9f3 {{product.old_price }}</small>
@@ -32,7 +32,7 @@
             <div class="form">
                 <div class="form-group">
                     <input class="input storage_qty" type="number" value="{{ product.quantity }}"
-                           onchange="show_save_button()">
+                           onchange="show_save_button({{ forloop.counter }})">
                 </div>
             </div>
         </td>
@@ -54,7 +54,7 @@
                                                  onclick="remove_from_storage({{ product.id }})"></i></button>
         </td>
         <td class="text-right">
-            <button class="main-btn icon-btn" id="save_btn" style="display: none; margin-left:10px;"><i
+            <button class="main-btn icon-btn save_btn" style="display: none; margin-left:10px;"><i
                     class="fa fa-check"
                     onclick="update_product({{ product.id }},{{ forloop.counter }})"></i>
             </button>

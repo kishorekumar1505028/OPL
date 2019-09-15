@@ -575,12 +575,12 @@ if (btns) {
     }
 }
 
-function show_save_button() {
-    document.getElementById("save_btn").style.display = 'block';
+function show_save_button(c) {
+    document.getElementsByClassName("save_btn")[c - 1].style.display = 'block';
 }
 
-function hide_save_button() {
-    document.getElementById("save_btn").style.display = 'none';
+function hide_save_button(c) {
+    document.getElementsByClassName("save_btn")[c - 1].style.display = 'none';
 }
 
 function change_storage(id,change_or_remove,quantity,price) {
@@ -617,5 +617,5 @@ function update_product(id , c) {
     var quantity = document.getElementsByClassName("storage_qty")[c - 1].value;
     var price = document.getElementsByClassName("storage_price")[c - 1].value;
     change_storage(id,1, quantity, price);
-    hide_save_button();
+    hide_save_button(c);
 }
