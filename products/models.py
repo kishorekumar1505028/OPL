@@ -60,6 +60,9 @@ class CategoryTag(models.Model):
     tag = models.CharField(max_length=450, default="empty")
     superCategory = models.ForeignKey(SuperCategory, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.category
+
     class Meta:
         db_table = 'category_tag'
 
@@ -73,7 +76,7 @@ class Product(models.Model):
     """Product refers to the products of the site"""
 
     name = models.CharField(max_length=1000)
-    description = models.CharField(max_length=1000)
+    description = models.TextField(blank=True)
     quantity = models.IntegerField(default='0')
     old_price = models.FloatField(default='0')
     price = models.FloatField(default='0')
@@ -82,6 +85,9 @@ class Product(models.Model):
     image = models.ImageField(max_length=1000, blank=True, null=True, upload_to=product_image_path)
     category = models.ForeignKey(CategoryTag, on_delete=models.CASCADE)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         db_table = 'product'
@@ -105,6 +111,9 @@ class Cart(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
+
+    def __str__(self):
+        return self.user.username + self.product.name
 
     class Meta:
         db_table = 'cart'
@@ -159,7 +168,6 @@ class PurchaseLog(models.Model):
     quantity = models.FloatField(default=0)
 
     orderStatus = models.IntegerField(
-        max_length=1,
         choices=STATUS_CHOICES,
         default=PENDING,
     )

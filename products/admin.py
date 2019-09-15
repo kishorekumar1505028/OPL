@@ -7,13 +7,13 @@ from .models import CategoryTag
 from .models import SuperCategory
 from .models import TopCategory
 from .models import PurchaseLog
+from .models import Profile
 
 
 # Register your models here.
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'address')
-
 
 class CategoryTagAdmin(admin.ModelAdmin):
     list_display = ('id', 'category', 'tag')

@@ -10,11 +10,11 @@ from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 from django.views.decorators.csrf import csrf_exempt
 from django.core.files.storage import FileSystemStorage
-from django.views.generic import CreateView
 
 from products.models import Cart, WishList
 from .models import Product
 from .models import Shop, TopCategory, TopSuper, CategoryTag, SuperCategory, ProductReview, PurchaseLog
+from products.forms import ProductForm
 
 PENDING = 0
 DONE = 1
@@ -816,29 +816,28 @@ def add_product(request):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
     elif request.method == 'POST':
-        product_name = request.POST.get('product_name')
-        description = request.POST.get('description')
-        qty = request.POST.get('quantity')
-        price = request.POST.get('price')
-        image = request.POST.get('image')
-        catid = int(request.POST.get('category'))
-        print(catid)
-        category = CategoryTag.objects.get(Q(id=catid))
-        print(catid)
-        print("printing image attr")
+        product_form = ProductForm(request.POST, request.FILES)
 
-        Product.objects.create(name=product_name, description=description, quantity=qty,
-                               price=price, image=image, category=category, owner=request.user)
+        if product_form.is_valid():
+            new_product = product_form.save(commit=False)
+            new_product.owner = request.user
+            new_product.save()
+            msg = "Product has been added"
+            messages.add_message(request, messages.SUCCESS, msg)
 
-        msg = "Product has been added"
-        messages.add_message(request, messages.SUCCESS, msg)
+        else:
+            msg = "Adding Product Failed"
+            messages.add_message(request, messages.ERROR, msg)
+
         """
         @send user greetings
         """
+
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
     else:
-        return render(request, 'addproduct.html', {'category_list': cattag})
+        form = ProductForm()
+        return render(request, 'addproduct.html', {'category_list': cattag, 'form': form})
 
 
 @login_required
@@ -847,8 +846,3 @@ def logout_user(request):
     msg = "Hope to see you soon! :)"
     messages.add_message(request, messages.INFO, msg)
     return redirect('login_user')
-
-
-class ProductCreateView(CreateView):
-    model = Product
-    fields = ('name', 'description', 'quantity', 'price', 'discount', 'image', 'rating', 'category')
